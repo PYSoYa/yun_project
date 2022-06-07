@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Enterprise">
+    <insert id="save" parameterType="enterprise">
+        insert into enterprise_table(enterpriseId, enterprisePassword, enterpriseName, enterpriseEmail,
+                                     enterpriseProfileName, enterpriseMobile, enterpriseAddress1,
+                                     enterpriseAddress2, enterprseAddress3)
+                values (#{enterpriseId}, #{enterprisePassword},#{enterpriseName},#{enterpriseEmail},
+                        #{enterpriseProfileName}, #{enterpriseMobile}, #{enterpriseAddress1},
+                        #{enterpriseAddress2},#{enterpriseAddress3})
+    </insert>
+    <select id="duplicateCheck" parameterType="String" resultType="String">
+        select * from enterprise_table where enterpriseId=#{enterpriseId}
+    </select>
+    <select id="login" parameterType="enterprise" resultType="enterprise">
+
+    </select>
+</mapper>
