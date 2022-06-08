@@ -43,11 +43,11 @@ public class EnterpriseController {
         enterpriseDTO = enterpriseService.login(enterpriseDTO);
 
        if(enterpriseDTO != null){
-           System.out.println("enterpriseDTO = " + enterpriseDTO);
            model.addAttribute("login", enterpriseDTO);
            session.setAttribute("loginEnterpriseId",enterpriseDTO.getEnterpriseId());
            session.setAttribute("loginEnterprisePassword",enterpriseDTO.getEnterprisePassword());;
            session.setAttribute("LoginId", enterpriseDTO.getId());
+           session.setAttribute("enterpriseName", enterpriseDTO.getEnterpriseName());
            return "redirect:/";
        }else{
            return "/enterprisePages/login";

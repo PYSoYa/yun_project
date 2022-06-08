@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="BoardIndex">
+    <insert id="save" parameterType="boardIndex">
+        insert into boardindex_table(indexName, indexTitle, indexArea1, indexArea2, indexMoney)
+                    values (#{indexName},#{indexTitle},#{indexArea1}, #{indexArea2},#{indexMoney})
+    </insert>
+</mapper>

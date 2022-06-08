@@ -11,6 +11,8 @@ public class BoardIndexDTO {
     private Long id;
     private String indexName;
     private String indexTitle;
-    private String indexArea;
     private String indexMoney;
+    private int indexArea1;
+    private String indexArea2;
+
 }

@@ -9,29 +9,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="748ee8e8-d79b-4b48-9256-5626f58a0eef" name="Changes" comment="회원가입 완료후&#10;로그인 수정">
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/save.jsp" afterDir="false" />
+    <list default="true" id="748ee8e8-d79b-4b48-9256-5626f58a0eef" name="Changes" comment="기업회원가입 완료">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/BoardIndexService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/boardIndexMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardIndex/mainSave.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/BoardIndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/BoardIndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/EnterpriseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/EnterpriseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/MemberController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/BoardIndexDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/BoardIndexDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/EnterpriseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/EnterpriseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/EnterpriseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/EnterpriseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/enterpriseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/enterpriseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPages/save.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPages/mainsave.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/enterprisePages/save.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/enterprisePages/save.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/BoardIndexRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/BoardIndexRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/save.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/save.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/signup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/EnterpriseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/EnterpriseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/dto/BoardIndexDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/dto/BoardIndexDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/EnterpriseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/EnterpriseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/dto/BoardIndexDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/dto/BoardIndexDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/boardPages/save.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/header/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/header/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/main/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/main/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/save.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/save.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/resources/css/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/resources/css/signup.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +39,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Jsp File" />
       </list>
     </option>
@@ -66,6 +65,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2AFVHSdM4EeVOqcKW7XgxWcmVf5" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -81,6 +83,11 @@
     "spring.configuration.checksum": "bd042a2b850fe9b8f4c64f10ade6d589"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\devel\spring_framework\yunproject\src\main\webapp\WEB-INF\views\boardindex" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.63" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.63" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
@@ -181,7 +188,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654605231990</updated>
       <workItem from="1654605234312" duration="5307000" />
-      <workItem from="1654644981659" duration="13950000" />
+      <workItem from="1654644981659" duration="25337000" />
     </task>
     <task id="LOCAL-00001" summary="회원가입 완료후&#10;로그인 수정">
       <created>1654645271907</created>
@@ -190,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654645271907</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="기업회원가입 완료">
+      <created>1654663525654</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654663525654</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +223,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="회원가입 완료후&#10;로그인 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="회원가입 완료후&#10;로그인 수정" />
+    <MESSAGE value="기업회원가입 완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="기업회원가입 완료" />
   </component>
 </project>
