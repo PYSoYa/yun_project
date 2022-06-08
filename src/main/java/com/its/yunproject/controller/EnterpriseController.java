@@ -27,8 +27,8 @@ public class EnterpriseController {
        return "/main/index";
     }
 
-    @GetMapping("/duplicateCheck")
-    public String duplicateCheck(@RequestParam("enterpriseId") String enterpriseId){
+    @PostMapping("/duplicateCheck")
+    public @ResponseBody String duplicateCheck(@RequestParam("enterpriseId") String enterpriseId){
        String result = enterpriseService.duplicateCheck(enterpriseId);
        return result;
     }
@@ -39,16 +39,25 @@ public class EnterpriseController {
     @PostMapping("/login")
     public String login(@ModelAttribute EnterpriseDTO enterpriseDTO, Model model,
                         HttpSession session){
-       EnterpriseDTO result = enterpriseService.login(enterpriseDTO);
-       if(result != null){
+
+        enterpriseDTO = enterpriseService.login(enterpriseDTO);
+
+       if(enterpriseDTO != null){
+           System.out.println("enterpriseDTO = " + enterpriseDTO);
            model.addAttribute("login", enterpriseDTO);
            session.setAttribute("loginEnterpriseId",enterpriseDTO.getEnterpriseId());
-           session.setAttribute("loginPassword",enterpriseDTO.getEnterprisePassword());;
+           session.setAttribute("loginEnterprisePassword",enterpriseDTO.getEnterprisePassword());;
            session.setAttribute("LoginId", enterpriseDTO.getId());
-           return "/main/index";
+           return "redirect:/";
        }else{
            return "/enterprisePages/login";
        }
 
+
+    }
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/";
     }
 }

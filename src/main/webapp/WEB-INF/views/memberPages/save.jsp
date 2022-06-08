@@ -16,7 +16,7 @@
 <body>
 <form action="/member/save" method="post" enctype="multipart/form-data">
     <div class="main">
-        <h1>회원가입 페이지</h1>
+        <h1>개인 회원가입</h1>
         <div class="style-a">
             <input type="text" id="memberId" name="memberId" onblur="duplicateCheck()" placeholder="아이디">
             <span id="check"></span>

@@ -14,9 +14,10 @@ public class EnterpriseDTO {
     private String enterprisePassword;
     private String enterpriseName;
     private String enterpriseEmail;
+    private String enterpriseMobile;
     private MultipartFile enterpriseProfile;
     private String enterpriseProfileName;
-    private String enterpriseMobile;
+    private String enterpriseNumber;
     private int enterpriseAddress1;
     private String enterpriseAddress2;
     private String enterpriseAddress3;

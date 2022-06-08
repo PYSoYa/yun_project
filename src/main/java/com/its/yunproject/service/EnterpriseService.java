@@ -37,7 +37,7 @@ public class EnterpriseService {
     }
 
     public EnterpriseDTO login(EnterpriseDTO enterpriseDTO) {
-       EnterpriseDTO result = enterpriseRepository.login(enterpriseDTO);
-       return result;
+       EnterpriseDTO enterpriseDTO1 = enterpriseRepository.login(enterpriseDTO);
+       return enterpriseDTO1;
     }
 }

@@ -40,13 +40,15 @@ public class MemberController {
     }
     @PostMapping("/login")
     public String login(MemberDTO memberDTO, Model model, HttpSession session){
+
        memberDTO = memberService.login(memberDTO);
+
        if(memberDTO != null){
            model.addAttribute("login", memberDTO);
            session.setAttribute("loginMemberId", memberDTO.getMemberId());
            session.setAttribute("loginMemberPassword", memberDTO.getMemberPassword());
            session.setAttribute("loginId", memberDTO.getId());
-           return "/main/index";
+           return "redirect:/";
        }else{
            return "/memberPages/login";
        }
@@ -54,6 +56,6 @@ public class MemberController {
     @GetMapping("/logout")
     public String logout(HttpSession session){
         session.invalidate();
-        return "/main/index";
+        return "redirect:/";
     }
 }

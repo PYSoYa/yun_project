@@ -11,29 +11,63 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css"/>
     <style>
-        #test{
-
+        header {
+            height: 40px;
+            padding: 1rem;
+            color: #222222;
+            background-color: white;
+            font-weight: bold;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            float: right;
+        }
+        .nav-item{
+            margin-right: 8px;
         }
     </style>
 </head>
 <body>
-<iframe name="hframe4" style="display: none;"></iframe>
-<div class="main-header">
-    <div class="main-button">
-        <a href="/member/save">회원가입</a>
-    </div>
-    <div id="test" class="main-button">
-        <a onclick="login()">로그인</a>
-    </div>
+<%--<iframe name="hframe4" style="display: none;"></iframe>--%>
+<header>
+<ul class="nav nav-pills">
+
     <c:choose>
         <c:when test="${sessionScope.loginMemberId != null}">
-            <p>sdfsdf</p>
-            <a class="logout" href="/member/logout">로그아웃</a>
+            <li class="nav-item">
+                <a onclick="logout()">로그아웃</a>
+            </li>
+            <li class="nav-item">
+                <a onclick="myPage()">마이페이지</a>
+            </li>
         </c:when>
     </c:choose>
-</div>
+    <c:choose>
+        <c:when test="${sessionScope.loginMemberId == null && sessionScope.loginEnterpriseId == null}">
+            <li id="test" class="nav-item">
+                <a onclick="login()">로그인</a>
+            </li>
+            <li class="nav-item">
+                <a onclick="signup()">회원가입</a>
+            </li>
+        </c:when>
+    </c:choose>
+    <c:choose>
+        <c:when test="${sessionScope.loginEnterpriseId != null}">
+            <li class="nav-item">
+                <a onclick="enterpriseLogout()">로그아웃</a>
+            </li>
+            <li class="nav-item">
+                <a onclick="enterpriseMypage()">마이페이지</a>
+            </li>
+        </c:when>
+    </c:choose>
+
+</ul>
+</header>
 </body>
 <script>
     const login = () => {
@@ -44,6 +78,17 @@
         var left=(screen.availWidth-ww)/2;
 
         window.open('/homeLogin','get','width='+ww+', height='+wh+', top='+top+', left='+left+',toolbar=no, menubar=no, scrollbars=no, resizable=no' );
+    }
+    const signup = () => {
+        location.href = "/mainSave";
+    }
+    const logout = () => {
+        location.href = "/member/logout";
+    }
+    const enterpriseLogout = () => {
+        location.href = "/enterprise/logout";
+    }
+    const myPage = () => {
 
     }
 </script>

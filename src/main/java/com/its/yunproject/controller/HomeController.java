@@ -14,4 +14,9 @@ public class HomeController {
     public String login(){
         return "/main/login";
     }
+
+    @GetMapping("/mainSave")
+    public String save(){
+        return "/main/save";
+    }
 }
