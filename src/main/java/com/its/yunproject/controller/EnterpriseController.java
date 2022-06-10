@@ -60,4 +60,5 @@ public class EnterpriseController {
         session.invalidate();
         return "redirect:/";
     }
+
 }

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/boardIndex")
 public class BoardIndexController {
@@ -26,9 +28,17 @@ public class BoardIndexController {
         boolean result = boardIndexService.save(boardIndexDTO);
         if(result){
             model.addAttribute("boardIndex", boardIndexDTO);
-            return "/main/index";
+            return "/boardPages/save";
         }else{
             return "/boardIndex/mainSave";
         }
+    }
+
+    @GetMapping("/findAll")
+    public String findAll(Model model){
+       List<BoardIndexDTO> boardIndexDTOList = boardIndexService.findAll();
+       model.addAttribute("boardIndexList", boardIndexDTOList);
+       return "/main/index";
+
     }
 }

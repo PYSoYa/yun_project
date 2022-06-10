@@ -5,15 +5,18 @@
 
 <mapper namespace="Board">
     <insert id="save" parameterType="board">
-        insert into board_table(boardName, boardTitle, boardOccupation, boardDemploymentType,boardMoney,
-                                boardPersonnel, boardWorkeriod, boardWorkDays, boardWorktime,
+        insert into board_table(boardName, boardTitle, boardOccupation, boardDemploymentType,
+                                boardPersonnel, boardWorkperiod, boardWorkDays, boardWorktime,
                                 boardGender, boardAge, boardEducation, boardDeadline, boardContext,
-                                boardEnterPriseName, boardAddress, boardManagerName, boardEmail,
-                                boaardMobile)
-                values (#{boardName},#{boardTitle},#{boardOccupation},#{boardDemploymentType},#{boardMoney},
-                        #{boardPersonnel},#{boardWorkeriod},#{boardWorkdDays},#{boardWorktime},
+                                boardAddress, boardAddress1, boardMoney, boardManagerName, boardEmail,
+                                boardMobile)
+                values (#{boardName},#{boardTitle},#{boardOccupation},#{boardDemploymentType},
+                        #{boardPersonnel},#{boardWorkperiod},#{boardWorkDays},#{boardWorktime},
                         #{boardGender},#{boardAge},#{boardEducation},#{boardDeadline}, #{boardContext},
-                        #{boardEnterPriseName},#{boardAddress},#{boardMangerName},#{boardEmail},
+                        #{boardAddress},#{boardAddress1},#{boardMoney},#{boardManagerName},#{boardEmail},
                         #{boardMobile})
     </insert>
+    <select id="detail" parameterType="String" resultType="board">
+        select * from board_table where boardTitle=#{boardTitle}
+    </select>
 </mapper>

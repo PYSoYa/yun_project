@@ -8,4 +8,7 @@
         insert into boardindex_table(indexName, indexTitle, indexArea1, indexArea2, indexMoney)
                     values (#{indexName},#{indexTitle},#{indexArea1}, #{indexArea2},#{indexMoney})
     </insert>
+    <select id="findAll" resultType="boardIndex">
+        select * from boardindex_table
+    </select>
 </mapper>

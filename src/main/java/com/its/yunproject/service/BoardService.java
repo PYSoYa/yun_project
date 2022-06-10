@@ -18,4 +18,9 @@ public class BoardService {
             return false;
         }
     }
+
+    public BoardDTO detail(String boardTitle) {
+       BoardDTO boardDTO = boardRepository.detail(boardTitle);
+       return boardDTO;
+    }
 }

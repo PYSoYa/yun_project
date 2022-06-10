@@ -24,22 +24,29 @@
         .header {
             margin-top: 10px;
             height: 30px;
+            width: 100%;
             color: #222222;
             background-color: white;
             font-weight: bold;
             font-size: 12px;
             display: flex;
             margin-bottom: 30px;
+            padding-right: 10px;
             /*justify-content: space-between;*/
-            /*float: right;*/
+            float: right;
+            border-bottom-style: solid;
         }
         .menu {
+            width: 200px;
             height: 40px;
             display: flex;
+            margin-bottom: 100px;
+            margin-left: 80%;
         }
         .nav-item{
             margin-right: 8px;
         }
+
     </style>
 </head>
 <body>
@@ -47,6 +54,9 @@
 <div class="mainHeader">
     <div class="header">
     <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a onclick="home()">메인</a>
+        </li>
         <c:choose>
             <c:when test="${sessionScope.loginMemberId != null}">
                 <li class="nav-item">
@@ -86,7 +96,7 @@
                 <a onclick="boardIndexSave()">공고등록</a>
             </li>
             <li class="nav-item">
-                <a href="">이력서 등록</a>
+                <a onclick="carrer()">이력서 등록</a>
             </li>
         </ul>
     </div>
@@ -95,6 +105,12 @@
 
 </body>
 <script>
+    const carrer = () => {
+        location.href = "/member/carrer";
+    }
+    const home = () =>{
+        location.href = "/";
+    }
     const login = () => {
         var ww=450;
         var wh=400;

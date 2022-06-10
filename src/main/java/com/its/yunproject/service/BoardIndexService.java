@@ -5,6 +5,8 @@ import com.its.yunproject.repository.BoardIndexRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BoardIndexService {
     @Autowired
@@ -17,5 +19,10 @@ public class BoardIndexService {
         }else{
             return false;
         }
+    }
+
+    public List<BoardIndexDTO> findAll() {
+       List<BoardIndexDTO> boardIndexDTOList = boardIndexRepository.findAll();
+       return boardIndexDTOList;
     }
 }

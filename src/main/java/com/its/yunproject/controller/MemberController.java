@@ -58,4 +58,8 @@ public class MemberController {
         session.invalidate();
         return "redirect:/";
     }
+    @GetMapping("/carrer")
+    public String carrerForm(){
+        return "/memberPages/carrer";
+    }
 }

@@ -13,4 +13,8 @@ public class BoardRepository {
     public int save(BoardDTO boardDTO) {
         return sql.insert("Board.save", boardDTO);
     }
+
+    public BoardDTO detail(String boardTitle) {
+        return sql.selectOne("Board.detail", boardTitle);
+    }
 }

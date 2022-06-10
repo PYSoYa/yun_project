@@ -68,7 +68,7 @@
         // document.memberLogin.action="/member/login";
 
 
-         document.memberLogin.target ="/member/login";
+        document.memberLogin.target ="/member/login";
         document.memberLogin.submit();
 
 
