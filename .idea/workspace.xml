@@ -9,51 +9,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="748ee8e8-d79b-4b48-9256-5626f58a0eef" name="Changes" comment="메인페이지 글저장 완료">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPages/detail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPages/save.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/carrer.jsp" afterDir="false" />
+    <list default="true" id="748ee8e8-d79b-4b48-9256-5626f58a0eef" name="Changes" comment="이력서 페이지 완성">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/CarrerDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/mypageHeader.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/myPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/saveCarrer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/BoardIndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/BoardIndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/EnterpriseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/EnterpriseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/BoardDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/BoardDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/BoardIndexRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/BoardIndexRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/BoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/BoardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/EnterpriseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/EnterpriseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/BoardIndexService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/BoardIndexService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/BoardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/EnterpriseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/EnterpriseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/boardIndexMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/boardIndexMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/boardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/boardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/MemberDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/memberMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/BoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/BoardIndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/BoardIndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/dto/BoardDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/dto/BoardDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/repository/BoardIndexRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/repository/BoardIndexRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/repository/BoardRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/repository/BoardRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/service/BoardIndexService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/service/BoardIndexService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/service/BoardService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/service/BoardService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/boardIndexMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/boardIndexMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/boardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/boardMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/BoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/BoardIndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/BoardIndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/dto/BoardDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/dto/BoardDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/repository/BoardIndexRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/repository/BoardIndexRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/repository/BoardRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/repository/BoardRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/service/BoardIndexService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/service/BoardIndexService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/service/BoardService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/service/BoardService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mapper/boardIndexMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mapper/boardIndexMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mapper/boardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mapper/boardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/carrer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/carrer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/save.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/save.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/signup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/dto/MemberDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/dto/MemberDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/repository/MemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/repository/MemberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/service/MemberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/memberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/dto/MemberDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/dto/MemberDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/repository/MemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/repository/MemberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/service/MemberService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mapper/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mapper/memberMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/header/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/header/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/main/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/main/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/main/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/main/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/save.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/save.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/resources/css/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/resources/css/signup.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,8 +47,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -131,7 +115,7 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="a548d037-c32d-484a-a176-4d0252de1396" />
-        <option name="HTTP_PORT" value="8082" />
+        <option name="HTTP_PORT" value="8081" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -220,7 +204,7 @@
       <workItem from="1654605234312" duration="5307000" />
       <workItem from="1654644981659" duration="31626000" />
       <workItem from="1654731203737" duration="28585000" />
-      <workItem from="1654825956715" duration="9414000" />
+      <workItem from="1654825956715" duration="18200000" />
     </task>
     <task id="LOCAL-00001" summary="회원가입 완료후&#10;로그인 수정">
       <created>1654645271907</created>
@@ -243,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654675283875</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="이력서 페이지 완성">
+      <created>1654839165556</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654839165556</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +255,8 @@
     <MESSAGE value="회원가입 완료후&#10;로그인 수정" />
     <MESSAGE value="기업회원가입 완료" />
     <MESSAGE value="메인페이지 글저장 완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="메인페이지 글저장 완료" />
+    <MESSAGE value="이력서 페이지 완성" />
+    <option name="LAST_COMMIT_MESSAGE" value="이력서 페이지 완성" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

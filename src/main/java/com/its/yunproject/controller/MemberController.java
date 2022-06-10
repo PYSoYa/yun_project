@@ -1,13 +1,16 @@
 package com.its.yunproject.controller;
 
+
 import com.its.yunproject.dto.MemberDTO;
 import com.its.yunproject.service.MemberService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+
 
 @Controller
 @RequestMapping("/member")
@@ -58,8 +61,23 @@ public class MemberController {
         session.invalidate();
         return "redirect:/";
     }
+    @GetMapping("/myPage")
+    public String myPageForm(){
+        return "/memberPages/myPage";
+    }
+    @GetMapping("/findById")
+    public String findBYIdd(@RequestParam("id") Long id, Model model){
+       MemberDTO memberDTO = memberService.findById(id);
+       if(memberDTO != null){
+           model.addAttribute("memberDTO", memberDTO);
+           return "/memberPages/carrer";
+       }else{
+           return "/main/index";
+       }
+    }
     @GetMapping("/carrer")
     public String carrerForm(){
         return "/memberPages/carrer";
     }
+
 }

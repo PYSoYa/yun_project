@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: user
-  Date: 2022-06-09
-  Time: 오후 5:44
+  Date: 2022-06-10
+  Time: 오후 4:27
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -92,11 +92,11 @@
 
     <tr>
         <div class="table-header">
-        <td rowspan="4">경 력</td>
-        <td colspan="3">기 간</td>
-        <td colspan="4">근 무 처</td>
-        <td>직 위</td>
-        <td colspan="3">업 무 내 용</td>
+            <td rowspan="4">경 력</td>
+            <td colspan="3">기 간</td>
+            <td colspan="4">근 무 처</td>
+            <td>직 위</td>
+            <td colspan="3">업 무 내 용</td>
         </div>
     </tr>
     <tr>
@@ -120,30 +120,30 @@
 
     <tr>
         <div class="table-header">
-        <td rowspan="2">병 역</td>
-        <td colspan="3">복 무 기 간</td>
-        <td colspan="2">군 번</td>
-        <td colspan="2">계 급</td>
-        <td colspan="">병 과</td>
-        <td colspan="3">근 무 처</td>
+            <td rowspan="2">병 역</td>
+            <td colspan="3">복 무 기 간</td>
+            <td colspan="2">군 번</td>
+            <td colspan="2">계 급</td>
+            <td colspan="">병 과</td>
+            <td colspan="3">근 무 처</td>
         </div>
     </tr>
     <tr>
-        <td colspan="3">-</td>
-        <td colspan="2">-</td>
-        <td colspan="2">-</td>
-        <td colspan="">-</td>
-        <td colspan="3">-</td>
+        <td colspan="3">sdf</td>
+        <td colspan="2">sdf</td>
+        <td colspan="2">sdf</td>
+        <td colspan="">sdf</td>
+        <td colspan="3">sdf</td>
     </tr>
 </table>
 <table border="1">
     <tr>
         <div class="table-header">
-        <td rowspan="6" width="20px">자격 및 면허</td>
-        <td colspan="" width="164px">취득 년 월 일</td>
-        <td colspan="2" width="36.5px">자 격</td>
-        <td colspan="2" width="36.5px">면 허 명</td>
-        <td colspan="3" width="51.5px">시 행 처</td>
+            <td rowspan="6" width="20px">자격 및 면허</td>
+            <td colspan="" width="164px">취득 년 월 일</td>
+            <td colspan="2" width="36.5px">자 격</td>
+            <td colspan="2" width="36.5px">면 허 명</td>
+            <td colspan="3" width="51.5px">시 행 처</td>
         </div>
     </tr>
     <tr>
@@ -153,28 +153,28 @@
         <td colspan="3">sdf</td>
     </tr>
     <tr>
-        <td colspan="">-</td>
-        <td colspan="2">-</td>
-        <td colspan="2">-</td>
-        <td colspan="3">-</td>
+        <td colspan="">sdf</td>
+        <td colspan="2">sdf</td>
+        <td colspan="2">sdf</td>
+        <td colspan="3">sdf</td>
     </tr>
     <tr>
-        <td colspan="">-</td>
-        <td colspan="2">-</td>
-        <td colspan="2">-</td>
-        <td colspan="3">-</td>
+        <td colspan="">sdf</td>
+        <td colspan="2">sdf</td>
+        <td colspan="2">sdf</td>
+        <td colspan="3">sdf</td>
     </tr>
     <tr>
-        <td colspan="">-</td>
-        <td colspan="2">-</td>
-        <td colspan="2">-</td>
-        <td colspan="3">-</td>
+        <td colspan="">sdf</td>
+        <td colspan="2">sdf</td>
+        <td colspan="2">sdf</td>
+        <td colspan="3">sdf</td>
     </tr>
     <tr>
-        <td colspan="">-</td>
-        <td colspan="2">-</td>
-        <td colspan="2">-</td>
-        <td colspan="3">-</td>
+        <td colspan="">sdf</td>
+        <td colspan="2">sdf</td>
+        <td colspan="2">sdf</td>
+        <td colspan="3">sdf</td>
     </tr>
 </table>
 <div class="table">
@@ -188,5 +188,4 @@
         성   명 :           (인)
     </div>
 </div>
-</body>
 </html>

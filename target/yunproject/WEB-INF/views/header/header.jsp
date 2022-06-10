@@ -106,7 +106,19 @@
 </body>
 <script>
     const carrer = () => {
+        if(${sessionScope.loginMemberId != null}){
+            location.href = "/member/carrer";
+        }else{
+            alert("개인회원만 작성할 수 있습니다.")
+        }
         location.href = "/member/carrer";
+    }
+    const myPage = () => {
+        if(${sessionScope.loginEnterpriseId != null}){
+            location.href = "/enterprise/myPage";
+        }else{
+            location.href = "/member/myPage";
+        }
     }
     const home = () =>{
         location.href = "/";
@@ -137,8 +149,6 @@
             alert("기업회원만 작성할 수 있습니다.");
         }
     }
-    const myPage = () => {
 
-    }
 </script>
 </html>

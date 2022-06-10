@@ -14,6 +14,8 @@ public class MemberDTO {
     private String memberPassword;
     private String memberName;
     private int memberAge;
+    private int memberSecurity;
+    private int memberSecurity1;
     private String memberEmail;
     private String memberMobile;
     private MultipartFile memberProfile;

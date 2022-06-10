@@ -30,6 +30,10 @@
         <div class="style-a">
             <input type="text" id="memberAge" name="memberAge" placeholder="나이"><br>
         </div>
+        <div class="style-b">
+            <input type="text" id="memberSecurity" name="memberSecurity" placeholder="주민번호앞 6자리">
+            <input type="password" id="memberSecurity1" name="memberSecurity1" placeholder="뒤 7자리"> <br>
+        </div>
         <div class="style-a">
             <input type="text" id="memberEmail" name="memberEmail" placeholder="이메일"><br>
         </div>
