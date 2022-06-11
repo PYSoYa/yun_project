@@ -9,30 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91cf2ded-6d7d-456a-bbaa-89c6d0ebd71a" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/CarrerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/CarrerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/carrerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="91cf2ded-6d7d-456a-bbaa-89c6d0ebd71a" name="변경" comment="이력서 저장,출력 완성">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/CarrerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/CarrerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/carrer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/carrer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/save.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/save.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/saveCarrer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/saveCarrer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/header/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/header/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/carrer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/carrer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/save.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/save.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/saveCarrer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/saveCarrer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/main/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/main/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,8 +163,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654919317949</updated>
-      <workItem from="1654919319905" duration="15585000" />
+      <workItem from="1654919319905" duration="17635000" />
     </task>
+    <task id="LOCAL-00001" summary="이력서 저장,출력 완성">
+      <created>1654936060408</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1654936060408</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,5 +188,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="이력서 저장,출력 완성" />
+    <option name="LAST_COMMIT_MESSAGE" value="이력서 저장,출력 완성" />
   </component>
 </project>

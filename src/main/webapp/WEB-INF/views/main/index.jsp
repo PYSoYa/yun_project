@@ -25,13 +25,38 @@
         #board{
 
         }
+        .container-top{
+            margin-bottom: 40px;
+        }
+        .container-top-1{
+            text-align: right;
+            margin-right: 20px;
+        }
+        .container-top-2{
+            margin-left: 80px;
+            margin-right: 20px;
+            width: 1125px;
+        }
     </style>
 </head>
 <body>
 
 <jsp:include page="../header/header.jsp"></jsp:include>
-
-
+<div class="container-top">
+    <div class="container-top-1">
+        <span id="test" onclick="detailSearch()">상세검색</span>
+    </div>
+    <div class="container-top-2" id="detail" style="display: none;">
+        <div class="col-10">
+            <div class="p-3 border bg-body">
+                <form action="board/"
+                <input type="radio" value="boardGender">무관
+                <input type="radio" value="boardGender">남자
+                <input type="radio" value="boardGender">여자
+            </div>
+        </div>
+    </div>
+</div>
     <div class="container">
         <div class="row g-2">
             <c:forEach var="boardIndex" items="${boardIndexList}">
@@ -48,7 +73,15 @@
             </c:forEach>
         </div>
     </div>
-
-
 </body>
+<script>
+    const detailSearch = () => {
+        const detail = document.getElementById("detail");
+        if(detail.style.display == "none"){
+            detail.style.display = "block";
+        }else{
+            detail.style.display = 'none';
+        }
+    }
+</script>
 </html>
