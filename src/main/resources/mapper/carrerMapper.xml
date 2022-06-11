@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Carrer">
+    <insert id="save" parameterType="carrer">
+        insert into carrer_table(id,cs_period,cs_name,cs_major,
+                                 cb_period,cb_name,cb_job,cb_work,
+                                 ca_period,ca_number,ca_rank,ca_major,
+                                 ca_name,cc_period,cc_rank,cc_name,cc_agency)
+            values(#{id},#{cs_period},#{cs_name},#{cs_major},
+                   #{cb_period},#{cb_name},#{cb_job},#{cb_work},
+                   #{ca_period},#{ca_number},#{ca_rank},#{ca_major},
+                   #{ca_name},#{cc_period},#{cc_rank},#{cc_name},#{cc_agency})
+    </insert>
+    <select id="findById" parameterType="Long" resultType="carrer">
+        select * from carrer_table where id=#{id}
+    </select>
+</mapper>

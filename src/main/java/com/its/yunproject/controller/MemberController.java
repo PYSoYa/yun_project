@@ -1,7 +1,9 @@
 package com.its.yunproject.controller;
 
 
+import com.its.yunproject.dto.CarrerDTO;
 import com.its.yunproject.dto.MemberDTO;
+import com.its.yunproject.service.CarrerService;
 import com.its.yunproject.service.MemberService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,9 @@ import javax.servlet.http.HttpSession;
 public class MemberController {
     @Autowired
     private MemberService memberService;
+
+    @Autowired
+    private CarrerService carrerService;
 
     @GetMapping("/save")
     public String saveForm(){
@@ -68,7 +73,9 @@ public class MemberController {
     @GetMapping("/findById")
     public String findBYIdd(@RequestParam("id") Long id, Model model){
        MemberDTO memberDTO = memberService.findById(id);
+       CarrerDTO carrerDTO = carrerService.findById(id);
        if(memberDTO != null){
+           model.addAttribute("carrerDTO", carrerDTO);
            model.addAttribute("memberDTO", memberDTO);
            return "/memberPages/carrer";
        }else{
@@ -76,8 +83,19 @@ public class MemberController {
        }
     }
     @GetMapping("/carrer")
-    public String carrerForm(){
-        return "/memberPages/carrer";
+    public String carrerForm(@RequestParam("id") Long id, Model model){
+        MemberDTO memberDTO = memberService.findById(id);
+        model.addAttribute("memberDTO", memberDTO);
+        return "/memberPages/saveCarrer";
+    }
+    @PostMapping("/carrer")
+    public String saveCarrer(@ModelAttribute CarrerDTO carrerDTO){
+        boolean result = carrerService.saveCarrer(carrerDTO);
+        if(result){
+            return "redirect:/";
+        }else{
+            return "redirect:/";
+        }
     }
 
 }

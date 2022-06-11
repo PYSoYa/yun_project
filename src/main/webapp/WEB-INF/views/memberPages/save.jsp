@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Title</title>
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="../../../resources/js/jquery.js"></script>
     <link rel="stylesheet" href="../../../resources/css/signup.css">
 </head>

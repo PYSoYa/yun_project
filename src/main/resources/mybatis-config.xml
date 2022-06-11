@@ -7,5 +7,6 @@
         <typeAlias type="com.its.yunproject.dto.BoardDTO" alias="board" />
         <typeAlias type="com.its.yunproject.dto.EnterpriseDTO" alias="enterprise" />
         <typeAlias type="com.its.yunproject.dto.BoardIndexDTO" alias="boardIndex"/>
+        <typeAlias type="com.its.yunproject.dto.CarrerDTO" alias="carrer"/>
     </typeAliases>
 </configuration>

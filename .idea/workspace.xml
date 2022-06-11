@@ -9,35 +9,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="748ee8e8-d79b-4b48-9256-5626f58a0eef" name="Changes" comment="이력서 페이지 완성">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/CarrerDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/mypageHeader.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/myPage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/saveCarrer.jsp" afterDir="false" />
+    <list default="true" id="91cf2ded-6d7d-456a-bbaa-89c6d0ebd71a" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/CarrerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/CarrerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/carrerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/MemberDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/memberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/CarrerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/CarrerDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/carrer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/carrer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/save.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/save.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/signup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/saveCarrer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/saveCarrer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/dto/MemberDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/dto/MemberDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/repository/MemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/repository/MemberRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/service/MemberService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/memberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/dto/MemberDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/dto/MemberDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/repository/MemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/repository/MemberRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/service/MemberService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mapper/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mapper/memberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/header/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/header/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/carrer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/carrer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/save.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/save.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/yunproject/resources/css/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/resources/css/signup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/saveCarrer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/saveCarrer.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +42,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -72,40 +66,28 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2AFVHSdM4EeVOqcKW7XgxWcmVf5" />
+  <component name="ProjectId" id="2APltaMKsh43ZmBLNA7cQyjDHLu" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/devel/spring_framework/yunproject&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;bd042a2b850fe9b8f4c64f10ade6d589&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/development/source/spring_framework/yunproject"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\devel\spring_framework\yunproject\src\main\webapp\WEB-INF\views\boardindex" />
-    </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="&lt;/ul&gt;" />
-    </option>
-  </component>
+}]]></component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.63" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.63" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.62" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.62" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
-      <option name="UPDATING_POLICY" value="update-resources" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="yunproject:war exploded">
           <settings>
@@ -114,8 +96,8 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="a548d037-c32d-484a-a176-4d0252de1396" />
-        <option name="HTTP_PORT" value="8081" />
+        <option name="BASE_DIRECTORY_NAME" value="fc053c7a-517a-4853-a931-3ac3e3236beb" />
+        <option name="HTTP_PORT" value="8082" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -123,7 +105,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50372" />
+        <option name="DEBUG_PORT" value="50641" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -186,55 +168,23 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <method v="2">
-        <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="yunproject:war exploded" />
         </option>
+        <option name="Make" enabled="true" />
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="748ee8e8-d79b-4b48-9256-5626f58a0eef" name="Changes" comment="" />
-      <created>1654605231990</created>
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="91cf2ded-6d7d-456a-bbaa-89c6d0ebd71a" name="변경" comment="" />
+      <created>1654919317949</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1654605231990</updated>
-      <workItem from="1654605234312" duration="5307000" />
-      <workItem from="1654644981659" duration="31626000" />
-      <workItem from="1654731203737" duration="28585000" />
-      <workItem from="1654825956715" duration="18200000" />
+      <updated>1654919317949</updated>
+      <workItem from="1654919319905" duration="15585000" />
     </task>
-    <task id="LOCAL-00001" summary="회원가입 완료후&#10;로그인 수정">
-      <created>1654645271907</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1654645271907</updated>
-    </task>
-    <task id="LOCAL-00002" summary="기업회원가입 완료">
-      <created>1654663525654</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1654663525654</updated>
-    </task>
-    <task id="LOCAL-00003" summary="메인페이지 글저장 완료">
-      <created>1654675283875</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1654675283875</updated>
-    </task>
-    <task id="LOCAL-00004" summary="이력서 페이지 완성">
-      <created>1654839165556</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1654839165556</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,23 +200,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="회원가입 완료후&#10;로그인 수정" />
-    <MESSAGE value="기업회원가입 완료" />
-    <MESSAGE value="메인페이지 글저장 완료" />
-    <MESSAGE value="이력서 페이지 완성" />
-    <option name="LAST_COMMIT_MESSAGE" value="이력서 페이지 완성" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPages/detail.jsp</url>
-          <line>7</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

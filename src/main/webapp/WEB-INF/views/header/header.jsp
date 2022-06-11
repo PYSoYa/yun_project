@@ -107,11 +107,11 @@
 <script>
     const carrer = () => {
         if(${sessionScope.loginMemberId != null}){
-            location.href = "/member/carrer";
+            location.href = "/member/carrer?id=${sessionScope.loginId}";
         }else{
             alert("개인회원만 작성할 수 있습니다.")
         }
-        location.href = "/member/carrer";
+        location.href = "/member/carrer?id=${sessionScope.loginId}";
     }
     const myPage = () => {
         if(${sessionScope.loginEnterpriseId != null}){

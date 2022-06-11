@@ -1,11 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
   User: user
-  Date: 2022-06-09
-  Time: 오후 5:44
+  Date: 2022-06-10
+  Time: 오후 4:27
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Title</title>
@@ -75,82 +76,82 @@
         <td colspan="3">전공분야</td>
     </tr>
     <tr>
-        <td colspan="3"><input type="text" style="width: 50px;border: none;"></td>
-        <td colspan="5">sdf</td>
-        <td colspan="3">sdf</td>
+        <td colspan="3">${carrerDTO.cs_period}</td>
+        <td colspan="5">${carrerDTO.cs_name}</td>
+        <td colspan="3">${carrerDTO.cs_major}</td>
     </tr>
     <tr>
-        <td colspan="3">sdf</td>
-        <td colspan="5">sdf</td>
-        <td colspan="3">sdf</td>
+        <td colspan="3">-</td>
+        <td colspan="5">-</td>
+        <td colspan="3">-</td>
     </tr>
     <tr>
-        <td colspan="3">sdf</td>
-        <td colspan="5">sdf</td>
-        <td colspan="3">sdf</td>
+        <td colspan="3">-</td>
+        <td colspan="5">-</td>
+        <td colspan="3">-</td>
     </tr>
 
     <tr>
         <div class="table-header">
-        <td rowspan="4">경 력</td>
-        <td colspan="3">기 간</td>
-        <td colspan="4">근 무 처</td>
-        <td>직 위</td>
-        <td colspan="3">업 무 내 용</td>
+            <td rowspan="4">경 력</td>
+            <td colspan="3">기 간</td>
+            <td colspan="4">근 무 처</td>
+            <td>직 위</td>
+            <td colspan="3">업 무 내 용</td>
         </div>
     </tr>
     <tr>
-        <td colspan="3">sdf</td>
-        <td colspan="4">sdf</td>
-        <td>sdf</td>
-        <td colspan="3">sdf</td>
+        <td colspan="3">${carrerDTO.cb_period}</td>
+        <td colspan="4">${carrerDTO.cb_name}</td>
+        <td>${carrerDTO.cb_job}</td>
+        <td colspan="3">${carrerDTO.cb_work}</td>
     </tr>
     <tr>
-        <td colspan="3">sdf</td>
-        <td colspan="4">sdf</td>
-        <td>sdf</td>
-        <td colspan="3">sdf</td>
+        <td colspan="3">-</td>
+        <td colspan="4">-</td>
+        <td>-</td>
+        <td colspan="3">-</td>
     </tr>
     <tr>
-        <td colspan="3">sdf</td>
-        <td colspan="4">sdf</td>
-        <td>sdf</td>
-        <td colspan="3">sdf</td>
+        <td colspan="3">-</td>
+        <td colspan="4">-</td>
+        <td>-</td>
+        <td colspan="3">-</td>
     </tr>
 
     <tr>
         <div class="table-header">
-        <td rowspan="2">병 역</td>
-        <td colspan="3">복 무 기 간</td>
-        <td colspan="2">군 번</td>
-        <td colspan="2">계 급</td>
-        <td colspan="">병 과</td>
-        <td colspan="3">근 무 처</td>
+            <td rowspan="2">병 역</td>
+            <td colspan="3">복 무 기 간</td>
+            <td colspan="2">군 번</td>
+            <td colspan="2">계 급</td>
+            <td colspan="">병 과</td>
+            <td colspan="3">근 무 처</td>
         </div>
     </tr>
     <tr>
-        <td colspan="3">-</td>
-        <td colspan="2">-</td>
-        <td colspan="2">-</td>
-        <td colspan="">-</td>
-        <td colspan="3">-</td>
+        <td colspan="3">${carrerDTO.ca_period}</td>
+        <td colspan="2">${carrerDTO.ca_number}</td>
+        <td colspan="2">${carrerDTO.ca_rank}</td>
+        <td colspan="">${carrerDTO.ca_major}</td>
+        <td colspan="3">${carrerDTO.ca_name}</td>
     </tr>
 </table>
 <table border="1">
     <tr>
         <div class="table-header">
-        <td rowspan="6" width="20px">자격 및 면허</td>
-        <td colspan="" width="164px">취득 년 월 일</td>
-        <td colspan="2" width="36.5px">자 격</td>
-        <td colspan="2" width="36.5px">면 허 명</td>
-        <td colspan="3" width="51.5px">시 행 처</td>
+            <td rowspan="6" width="20px">자격 및 면허</td>
+            <td colspan="" width="164px">취득 년 월 일</td>
+            <td colspan="2" width="36.5px">자 격</td>
+            <td colspan="2" width="36.5px">면 허 명</td>
+            <td colspan="3" width="51.5px">시 행 처</td>
         </div>
     </tr>
     <tr>
-        <td colspan="">sdf</td>
-        <td colspan="2">sdf</td>
-        <td colspan="2">sdf</td>
-        <td colspan="3">sdf</td>
+        <td colspan="">${carrerDTO.cc_period}</td>
+        <td colspan="2">${carrerDTO.cc_rank}</td>
+        <td colspan="2">${carrerDTO.cc_name}</td>
+        <td colspan="3">${carrerDTO.cc_agency}</td>
     </tr>
     <tr>
         <td colspan="">-</td>
@@ -182,10 +183,11 @@
         위에 기재한 사항은 사실과 틀림이 없습니다.
     </div>
     <div class="table-2">
-        20  년  월  일
+        <fmt:formatDate pattern="yyyy.MM.dd"
+                        value="${carrerDTO.carrerDate}"></fmt:formatDate>
     </div>
     <div class="table-3">
-        성   명 :           (인)
+        성   명 : ${memberDTO.memberName}(인)
     </div>
 </div>
 </body>
