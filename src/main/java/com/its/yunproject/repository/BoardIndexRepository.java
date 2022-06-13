@@ -18,4 +18,8 @@ public class BoardIndexRepository {
     public List<BoardIndexDTO> findAll() {
         return sql.selectList("BoardIndex.findAll");
     }
+
+    public List<BoardIndexDTO> search(Long id) {
+        return sql.selectList("BoardIndex.search", id);
+    }
 }

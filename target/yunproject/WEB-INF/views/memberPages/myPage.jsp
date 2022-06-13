@@ -9,8 +9,13 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="../../../resources/css/my.css">
+
+    <script src="../../../resources/js/jquery.js"></script>
+    <script src="../../../resources/js/myPage.js"></script>
 </head>
 <body>
-<jsp:include page="../header/mypageHeader.jsp"></jsp:include>
+<jsp:include page="../header/header.jsp"></jsp:include>
+<jsp:include page="../header/leftHeader.jsp"></jsp:include>
 </body>
 </html>

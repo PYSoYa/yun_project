@@ -9,10 +9,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91cf2ded-6d7d-456a-bbaa-89c6d0ebd71a" name="변경" comment="이력서 저장,출력 완성">
+    <list default="true" id="91cf2ded-6d7d-456a-bbaa-89c6d0ebd71a" name="변경" comment="검색,상세검색 시작">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/boardPages/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/leftHeader.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/my.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/img/My project.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/img/work.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/myPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/BoardIndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/controller/BoardIndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/BoardDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/dto/BoardDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/BoardIndexRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/BoardIndexRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/BoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/repository/BoardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/BoardIndexService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/BoardIndexService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/its/yunproject/service/BoardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/boardIndexMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/boardIndexMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/boardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/boardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/mypageHeader.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header/mypageHeader.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/myPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memberPages/myPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/BoardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/BoardIndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/BoardIndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/dto/CarrerDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/dto/CarrerDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/repository/BoardIndexRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/repository/BoardIndexRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/repository/BoardRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/repository/BoardRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/repository/CarrerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/repository/CarrerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/service/BoardIndexService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/service/BoardIndexService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/service/BoardService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/service/BoardService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/its/yunproject/service/CarrerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/its/yunproject/service/CarrerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/boardIndexMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/boardIndexMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/boardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/boardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/BoardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/BoardIndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/BoardIndexController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/dto/CarrerDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/dto/CarrerDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/repository/BoardIndexRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/repository/BoardIndexRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/repository/BoardRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/repository/BoardRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/repository/CarrerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/repository/CarrerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/service/BoardIndexService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/service/BoardIndexService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/service/BoardService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/service/BoardService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/service/CarrerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/com/its/yunproject/service/CarrerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mapper/boardIndexMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mapper/boardIndexMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mapper/boardMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/classes/mapper/boardMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/header/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/header/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/header/mypageHeader.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/header/mypageHeader.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/main/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/main/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/myPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunproject/WEB-INF/views/memberPages/myPage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +70,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -61,13 +109,24 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/development/source/spring_framework/yunproject"
+    "last_opened_file_path": "C:/devel/spring_framework/yunproject",
+    "settings.editor.selected.configurable": "Errors",
+    "spring.configuration.checksum": "bd042a2b850fe9b8f4c64f10ade6d589"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\devel\spring_framework\yunproject\src\main\webapp\resources\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\devel\spring_framework\yunproject\src\main\webapp\resources\img" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.62" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.62" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.63" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.63" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-11">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATING_POLICY" value="update-resources" />
       <deployment>
         <artifact name="yunproject:war exploded">
           <settings>
@@ -76,7 +135,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="fc053c7a-517a-4853-a931-3ac3e3236beb" />
+        <option name="BASE_DIRECTORY_NAME" value="1aad8ba0-b202-424c-a378-eb714e573806" />
         <option name="HTTP_PORT" value="8082" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
@@ -85,7 +144,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50641" />
+        <option name="DEBUG_PORT" value="64467" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -163,7 +222,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654919317949</updated>
-      <workItem from="1654919319905" duration="17635000" />
+      <workItem from="1654919319905" duration="19321000" />
+      <workItem from="1655026464587" duration="247000" />
+      <workItem from="1655026718774" duration="135000" />
+      <workItem from="1655026909897" duration="864000" />
+      <workItem from="1655027783111" duration="5898000" />
+      <workItem from="1655035176341" duration="1408000" />
+      <workItem from="1655077239011" duration="19019000" />
+      <workItem from="1655099629695" duration="4370000" />
     </task>
     <task id="LOCAL-00001" summary="이력서 저장,출력 완성">
       <created>1654936060408</created>
@@ -172,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654936060408</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="검색,상세검색 시작">
+      <created>1654939510259</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654939510259</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +264,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="이력서 저장,출력 완성" />
-    <option name="LAST_COMMIT_MESSAGE" value="이력서 저장,출력 완성" />
+    <MESSAGE value="검색,상세검색 시작" />
+    <option name="LAST_COMMIT_MESSAGE" value="검색,상세검색 시작" />
   </component>
 </project>

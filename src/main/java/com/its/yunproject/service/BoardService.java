@@ -5,6 +5,8 @@ import com.its.yunproject.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BoardService {
     @Autowired
@@ -22,5 +24,15 @@ public class BoardService {
     public BoardDTO detail(String boardTitle) {
        BoardDTO boardDTO = boardRepository.detail(boardTitle);
        return boardDTO;
+    }
+
+    public BoardDTO searchDetail(BoardDTO boardDTO) {
+        BoardDTO boardDTO1 = boardRepository.searchDetail(boardDTO);
+        return boardDTO1;
+    }
+
+    public BoardDTO search(String q) {
+        BoardDTO searchList = boardRepository.search(q);
+        return searchList;
     }
 }

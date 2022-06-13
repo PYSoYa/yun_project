@@ -5,6 +5,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class BoardRepository {
     @Autowired
@@ -16,5 +18,13 @@ public class BoardRepository {
 
     public BoardDTO detail(String boardTitle) {
         return sql.selectOne("Board.detail", boardTitle);
+    }
+
+    public BoardDTO searchDetail(BoardDTO boardDTO) {
+        return sql.selectOne("Board.searchDetail", boardDTO);
+    }
+
+    public BoardDTO search(String q) {
+        return sql.selectOne("Board.search", q);
     }
 }

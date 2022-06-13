@@ -19,4 +19,12 @@
     <select id="detail" parameterType="String" resultType="board">
         select * from board_table where boardTitle=#{boardTitle}
     </select>
+    <select id="searchDetail" parameterType="board" resultType="board">
+        select * from board_table where boardGender=#{boardGender} and boardOccupation=#{boardOccupation}
+    </select>
+    <select id="search" parameterType="String" resultType="board">
+        select id from board_table where boardTitle or boardOccupation or boardDemploymentType or
+                                         boardWorkperiod or boardWorkDays or boardContext
+                                                        like concat ('%', #{q}, '%') order by id desc
+    </select>
 </mapper>

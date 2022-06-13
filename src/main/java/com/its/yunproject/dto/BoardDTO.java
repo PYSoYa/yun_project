@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -168,6 +170,13 @@ public class BoardDTO {
     public void setBoardMobile(String boardMobile) {
         this.boardMobile = boardMobile;
     }
+    public Timestamp getBoardDate() {
+        return boardDate;
+    }
+
+    public void setBoardDate(Timestamp boardDate) {
+        this.boardDate = boardDate;
+    }
 
     private String boardName;
     private String boardTitle;
@@ -188,5 +197,6 @@ public class BoardDTO {
     private String boardManagerName;
     private String boardEmail;
     private String boardMobile;
+    private Timestamp boardDate;
 }
 

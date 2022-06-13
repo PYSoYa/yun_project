@@ -25,4 +25,9 @@ public class BoardIndexService {
        List<BoardIndexDTO> boardIndexDTOList = boardIndexRepository.findAll();
        return boardIndexDTOList;
     }
+
+    public List<BoardIndexDTO> search(Long id) {
+        List<BoardIndexDTO> searchList = boardIndexRepository.search(id);
+        return searchList;
+    }
 }

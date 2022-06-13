@@ -2,17 +2,23 @@ package com.its.yunproject.controller;
 
 import com.its.yunproject.dto.BoardDTO;
 import com.its.yunproject.dto.BoardIndexDTO;
+import com.its.yunproject.service.BoardIndexService;
 import com.its.yunproject.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/board")
 public class BoardController {
     @Autowired
     private BoardService boardService;
+
+    @Autowired
+    private BoardIndexService boardIndexService;
 
     @GetMapping("/save")
     public String saveForm(){
@@ -41,5 +47,25 @@ public class BoardController {
            return "/boardPages/save";
        }
     }
+    @GetMapping("/searchDetail")
+    public String searchDetail(@ModelAttribute BoardDTO boardDTO, Model model){
 
+       BoardDTO boardDTO1 = boardService.searchDetail(boardDTO);
+
+       if(boardDTO1 != null){
+           model.addAttribute("boardDTO", boardDTO1);
+           return "/boardPages/detail";
+       }else{
+           return "redirect:/";
+       }
+    }
+
+    @GetMapping("/search")
+    public String search(@RequestParam String q, Model model){
+        BoardDTO boardDTO = boardService.search(q);
+        List<BoardIndexDTO> boardIndexDTOList = boardIndexService.search(boardDTO.getId());
+
+        model.addAttribute("boardIndexList", boardIndexDTOList);
+        return "/boardPages/list";
+    }
 }

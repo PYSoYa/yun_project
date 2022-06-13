@@ -11,4 +11,7 @@
     <select id="findAll" resultType="boardIndex">
         select * from boardindex_table
     </select>
+    <select id="search" parameterType="Long" resultType="boardIndex">
+        select * from boardindex_table where id=#{id}
+    </select>
 </mapper>

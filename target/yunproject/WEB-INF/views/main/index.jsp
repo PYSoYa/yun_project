@@ -11,6 +11,7 @@
 <html>
 <head>
     <title>Title</title>
+
     <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css"/>
     <style>
         .mainBoard {
@@ -37,28 +38,32 @@
             margin-right: 20px;
             width: 1125px;
         }
+        .search{
+            display: flex;
+        }
+        .search-1{
+            margin-left: 20px;
+        }
+        .search-2{
+            margin-left: 20px;
+        }
+        .a-tag{
+            color: #222222;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
 <jsp:include page="../header/header.jsp"></jsp:include>
-<div class="container-top">
-    <div class="container-top-1">
-        <span id="test" onclick="detailSearch()">상세검색</span>
-    </div>
-    <div class="container-top-2" id="detail" style="display: none;">
-        <div class="col-10">
-            <div class="p-3 border bg-body">
-                sdlfkjef
-            </div>
-        </div>
-    </div>
-</div>
+<jsp:include page="../header/leftHeader.jsp"></jsp:include>
+
+
     <div class="container">
         <div class="row g-2">
             <c:forEach var="boardIndex" items="${boardIndexList}">
             <div class="col-3">
-                <a id="board" href="/board/detail?boardTitle=${boardIndex.indexTitle}">
+                <a class="a-tag" id="board" href="/board/detail?boardTitle=${boardIndex.indexTitle}">
                 <div class="p-3 border bg-light" style="">
                         ${boardIndex.indexName}<br>
                         ${boardIndex.indexTitle}<br>
@@ -72,6 +77,9 @@
     </div>
 </body>
 <script>
+    const search = () => {
+        document.searchDetail.submit();
+    }
     const detailSearch = () => {
         const detail = document.getElementById("detail");
         if(detail.style.display == "none"){

@@ -11,116 +11,134 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="../../../resources/css/bootstrap.min.css"/>
     <style>
-        .mainHeader{
-            width: 100%;
-            display: block;
-
-        }
-        .header ul {
-            margin-left: 40px;
-        }
-        .header {
-            margin-top: 10px;
-            height: 30px;
-            width: 100%;
-            color: #222222;
-            background-color: white;
-            font-weight: bold;
-            font-size: 12px;
+        .header-container {
+            width: 1680px;
+            margin: 10px 40px 10px 0;
+            padding: 0;
             display: flex;
-            margin-bottom: 30px;
-            padding-right: 10px;
-            /*justify-content: space-between;*/
-            float: right;
-            border-bottom-style: solid;
-        }
-        .menu {
-            width: 200px;
-            height: 40px;
-            display: flex;
-            margin-bottom: 100px;
-            margin-left: 80%;
-        }
-        .nav-item{
-            margin-right: 8px;
+            border-bottom: solid black;
         }
 
+        .img-container {
+            width: 230px;
+        }
+
+        .menu-container {
+            margin-left: auto;
+            padding-right: 20px;
+            text-align: right;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+        }
+
+        .menu-container a {
+            text-decoration: none;
+            display: flex;
+            margin-left: 10px;
+        }
+        #main-header{
+            display: flex;
+        }
+        .container-top{
+            margin-bottom: 40px;
+        }
+        .container-top-1{
+            text-align: right;
+            margin-right: 20px;
+        }
+        .container-top-2{
+            margin-left: 80px;
+            margin-right: 20px;
+            width: 1125px;
+        }
+        .search{
+            display: flex;
+        }
+        .search-1{
+            margin-left: 20px;
+        }
+        .search-2{
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
-<%--<iframe name="hframe4" style="display: none;"></iframe>--%>
-<div class="mainHeader">
-    <div class="header">
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a onclick="home()">메인</a>
-        </li>
-        <c:choose>
-            <c:when test="${sessionScope.loginMemberId != null}">
-                <li class="nav-item">
-                    <a onclick="logout()">로그아웃</a>
-                </li>
-                <li class="nav-item">
-                    <a onclick="myPage()">마이페이지</a>
-                </li>
-            </c:when>
-        </c:choose>
-        <c:choose>
-            <c:when test="${sessionScope.loginMemberId == null && sessionScope.loginEnterpriseId == null}">
-                <li id="test" class="nav-item">
-                    <a onclick="login()">로그인</a>
-                </li>
-                <li class="nav-item">
-                    <a onclick="signup()">회원가입</a>
-                </li>
-            </c:when>
-        </c:choose>
-        <c:choose>
-            <c:when test="${sessionScope.loginEnterpriseId != null}">
-                <li class="nav-item">
-                    <a onclick="enterpriseLogout()">로그아웃</a>
-                </li>
-                <li class="nav-item">
-                    <a onclick="enterpriseMypage()">마이페이지</a>
-                </li>
-            </c:when>
-        </c:choose>
-    </ul>
-    </div>
-    <div class="menu">
-        <ul class="nav" style="float: right;">
 
-            <li class="nav-item">
-                <a onclick="boardIndexSave()">공고등록</a>
-            </li>
-            <li class="nav-item">
-                <a onclick="carrer()">이력서 등록</a>
-            </li>
-        </ul>
+
+<header>
+    <div class="header-container">
+        <div class="img-container">
+            <img src="../../../resources/img/work.jpg" onclick="home()" alt="..">
+        </div>
+        <div class="menu-container">
+                <ul id="main-header">
+                    <li>
+                        <a onclick="home()">메인</a>
+                    </li>
+                    <c:choose>
+                        <c:when test="${sessionScope.loginMemberId != null}">
+                            <li>
+                                <a onclick="logout()">로그아웃</a>
+                            </li>
+                        </c:when>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${sessionScope.loginMemberId == null && sessionScope.loginEnterpriseId == null}">
+                            <li id="test">
+                                <a onclick="login()">로그인</a>
+                            </li>
+                            <li>
+                                <a onclick="signup()">회원가입</a>
+                            </li>
+                        </c:when>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${sessionScope.loginEnterpriseId != null}">
+                            <li>
+                                <a onclick="enterpriseLogout()">로그아웃</a>
+                            </li>
+                        </c:when>
+                    </c:choose>
+                </ul>
+        </div>
+    </div>
+</header>
+<div class="container-top">
+    <div class="container-top-1">
+        <span onclick="detailSearch()">상세검색</span>
+    </div>
+    <div class="container-top-2" id="detail" style="display: none;">
+        <div class="col-10">
+            <div class="p-3 border bg-body">
+                <form action="/board/searchDetail" method="get" name="searchDetail">
+                    <div class="search">
+                        <div class="search-1">
+                            <select id="boardGender" name="boardGender">
+                                <option value="">성별</option>
+                                <option value="무관">무관</option>
+                                <option value="남자">남자</option>
+                                <option value="여자">여자</option>
+                            </select>
+                        </div>
+                        <div class="search-2">
+                            <select id="boardOccupation" name="boardOccupation">
+                                <option value="">업직종별</option>
+                                <option value="서비스">서비스</option>
+                                <option value="IT.기술">IT.기술</option>
+                            </select>
+                        </div>
+                        <input type="button" onclick="search()" value="검색">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
-
-
 </body>
 <script>
-    const carrer = () => {
-        if(${sessionScope.loginMemberId != null}){
-            location.href = "/member/carrer?id=${sessionScope.loginId}";
-        }else{
-            alert("개인회원만 작성할 수 있습니다.")
-        }
-        location.href = "/member/carrer?id=${sessionScope.loginId}";
-    }
-    const myPage = () => {
-        if(${sessionScope.loginEnterpriseId != null}){
-            location.href = "/enterprise/myPage";
-        }else{
-            location.href = "/member/myPage";
-        }
-    }
-    const home = () =>{
+    const home = () => {
         location.href = "/";
     }
     const login = () => {
@@ -140,14 +158,6 @@
     }
     const enterpriseLogout = () => {
         location.href = "/enterprise/logout";
-    }
-    const boardIndexSave = () => {
-        if(${sessionScope.loginEnterpriseId != null}){
-
-        location.href = "/boardIndex/save?id=${sessionScope.enterpriseName}";
-        }else{
-            alert("기업회원만 작성할 수 있습니다.");
-        }
     }
 
 </script>
