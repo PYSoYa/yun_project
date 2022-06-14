@@ -5,8 +5,8 @@
 
 <mapper namespace="BoardIndex">
     <insert id="save" parameterType="boardIndex">
-        insert into boardindex_table(indexName, indexTitle, indexArea1, indexArea2, indexMoney)
-                    values (#{indexName},#{indexTitle},#{indexArea1}, #{indexArea2},#{indexMoney})
+        insert into boardindex_table(indexName, indexTitle, indexArea1, indexArea2, indexMoney, indexDate)
+                    values (#{indexName},#{indexTitle},#{indexArea1}, #{indexArea2},#{indexMoney},#{indexDate})
     </insert>
     <select id="findAll" resultType="boardIndex">
         select * from boardindex_table

@@ -23,4 +23,7 @@ public class EnterpriseRepository {
     }
 
 
+    public EnterpriseDTO enderpriseDetail(Long id) {
+        return sql.selectOne("Enterprise.detail", id);
+    }
 }

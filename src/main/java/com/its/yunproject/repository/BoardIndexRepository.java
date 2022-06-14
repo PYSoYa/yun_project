@@ -1,5 +1,6 @@
 package com.its.yunproject.repository;
 
+import com.its.yunproject.dto.BoardDTO;
 import com.its.yunproject.dto.BoardIndexDTO;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class BoardIndexRepository {
         return sql.selectList("BoardIndex.findAll");
     }
 
-    public List<BoardIndexDTO> search(Long id) {
-        return sql.selectList("BoardIndex.search", id);
+    public BoardIndexDTO search(Long id) {
+        return sql.selectOne("BoardIndex.search", id);
     }
 }

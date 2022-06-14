@@ -159,6 +159,16 @@
     const enterpriseLogout = () => {
         location.href = "/enterprise/logout";
     }
-
+    const search = () => {
+        document.searchDetail.submit();
+    }
+    const detailSearch = () => {
+        const detail = document.getElementById("detail");
+        if(detail.style.display == "none"){
+            detail.style.display = "block";
+        }else{
+            detail.style.display = 'none';
+        }
+    }
 </script>
 </html>

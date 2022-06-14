@@ -1,5 +1,6 @@
 package com.its.yunproject.service;
 
+import com.its.yunproject.dto.BoardDTO;
 import com.its.yunproject.dto.BoardIndexDTO;
 import com.its.yunproject.repository.BoardIndexRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,8 @@ public class BoardIndexService {
        return boardIndexDTOList;
     }
 
-    public List<BoardIndexDTO> search(Long id) {
-        List<BoardIndexDTO> searchList = boardIndexRepository.search(id);
+    public BoardIndexDTO search(Long id) {
+        BoardIndexDTO searchList = boardIndexRepository.search(id);
         return searchList;
     }
 }

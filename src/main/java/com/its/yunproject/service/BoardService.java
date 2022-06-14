@@ -31,8 +31,9 @@ public class BoardService {
         return boardDTO1;
     }
 
-    public BoardDTO search(String q) {
-        BoardDTO searchList = boardRepository.search(q);
+    public List<BoardDTO> search(String q) {
+        System.out.println("q = " + q);
+        List<BoardDTO> searchList = boardRepository.search(q);
         return searchList;
     }
 }

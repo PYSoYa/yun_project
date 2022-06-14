@@ -68,7 +68,9 @@
                         ${boardIndex.indexName}<br>
                         ${boardIndex.indexTitle}<br>
                         ${boardIndex.indexArea2}<br>
-                        ${boardIndex.indexMoney}
+                        ${boardIndex.indexMoney}<br>
+                            <fmt:formatDate pattern="yyyy.MM.dd"
+                                            value="${boardIndex.indexDate}"></fmt:formatDate>
                 </div>
                 </a>
             </div>
@@ -77,16 +79,6 @@
     </div>
 </body>
 <script>
-    const search = () => {
-        document.searchDetail.submit();
-    }
-    const detailSearch = () => {
-        const detail = document.getElementById("detail");
-        if(detail.style.display == "none"){
-            detail.style.display = "block";
-        }else{
-            detail.style.display = 'none';
-        }
-    }
+
 </script>
 </html>

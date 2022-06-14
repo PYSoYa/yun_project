@@ -30,9 +30,11 @@
                             ${boardIndex.indexName}<br>
                             ${boardIndex.indexTitle}<br>
                             ${boardIndex.indexArea2}
-                                <div class="money">
+                                <fmt:formatDate pattern="yyyy.MM.dd"
+                                                value="${boardIndex.indexDate}"></fmt:formatDate>
+                            <div class="money">
                             ${boardIndex.indexMoney}
-                                </div>
+                            </div>
                     </div>
                 </a>
             </div>

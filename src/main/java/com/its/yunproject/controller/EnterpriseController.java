@@ -46,7 +46,7 @@ public class EnterpriseController {
            model.addAttribute("login", enterpriseDTO);
            session.setAttribute("loginEnterpriseId",enterpriseDTO.getEnterpriseId());
            session.setAttribute("loginEnterprisePassword",enterpriseDTO.getEnterprisePassword());;
-           session.setAttribute("LoginId", enterpriseDTO.getId());
+           session.setAttribute("enterpriseLoginId", enterpriseDTO.getId());
            session.setAttribute("enterpriseName", enterpriseDTO.getEnterpriseName());
            return "redirect:/";
        }else{
@@ -59,6 +59,17 @@ public class EnterpriseController {
     public String logout(HttpSession session){
         session.invalidate();
         return "redirect:/";
+    }
+
+    @GetMapping("/enterpriseDetail")
+    public String enterpriseDetail(@RequestParam("id") Long id, Model model){
+        EnterpriseDTO enterpriseDTO = enterpriseService.enterpriseDetail(id);
+        if(enterpriseDTO != null){
+            model.addAttribute("enterpriseDTO", enterpriseDTO);
+            return "/enterprisePages/enterpriseDetail";
+        }else{
+            return "redirect:/";
+        }
     }
 
 }

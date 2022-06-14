@@ -36,4 +36,14 @@ public class MemberService {
        MemberDTO memberDTO = memberRepository.findById(id);
        return memberDTO;
     }
+
+    public MemberDTO memberDetail(Long id) {
+        MemberDTO memberDTO = memberRepository.memberDetail(id);
+        return memberDTO;
+    }
+
+    public MemberDTO delete(Long id) {
+       MemberDTO memberDTO = memberRepository.delete(id);
+       return memberDTO;
+    }
 }

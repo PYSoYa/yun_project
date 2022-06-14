@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,5 +16,6 @@ public class BoardIndexDTO {
     private String indexMoney;
     private int indexArea1;
     private String indexArea2;
+    private Timestamp indexDate;
 
 }

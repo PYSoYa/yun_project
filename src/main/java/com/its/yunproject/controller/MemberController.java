@@ -68,7 +68,7 @@ public class MemberController {
     }
     @GetMapping("/myPage")
     public String myPageForm(){
-        return "/memberPages/myPage";
+        return "memberDetail";
     }
     @GetMapping("/findById")
     public String findBYIdd(@RequestParam("id") Long id, Model model){
@@ -97,5 +97,23 @@ public class MemberController {
             return "redirect:/";
         }
     }
-
+    @GetMapping("/memberDetail")
+    public String memberDetail(@RequestParam("id") Long id, Model model){
+       MemberDTO memberDTO = memberService.findById(id);
+       if(memberDTO != null){
+           model.addAttribute("memberDTO", memberDTO);
+           return "/memberPages/memberDetail";
+       }else{
+           return "redirect:/";
+       }
+    }
+    @PostMapping("/delete")
+    public String delete(@RequestParam("id") Long id){
+       MemberDTO memberDTO = memberService.delete(id);
+       if(memberDTO != null){
+           return "redirect:/";
+        }else{
+           return "redirect:/member/detail?id=" + memberDTO.getId();
+        }
+    }
 }

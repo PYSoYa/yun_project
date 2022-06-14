@@ -58,9 +58,9 @@
                     <li>개인회원</li>
                     <ul class="small_menu">
                         <li>
-                        <a onclick="carrer()">이력서 등록</a>
+                            <a href="/member/memberDetail?id=${sessionScope.loginId}">내 정보</a>
                         </li>
-                        <li><a href="">소메뉴1-3</a></li>
+                        <li><a onclick="carrer()">이력서 등록</a></li>
                         <li><a href="#">소메뉴1-4</a></li>
                     </ul>
                 </ul>
@@ -70,7 +70,7 @@
                         <li>
                             <a onclick="boardIndexSave()">공고등록</a>
                         </li>
-                        <li><a href="#">소메뉴2-2</a></li>
+                        <li><a href="/enterprise/enterpriseDetail?id=${sessionScope.enterpriseLoginId}">내 정보</a></li>
                     </ul>
                 </ul>
                 <ul class="big_menu">

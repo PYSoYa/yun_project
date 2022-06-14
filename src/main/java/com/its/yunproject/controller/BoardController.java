@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -62,10 +63,18 @@ public class BoardController {
 
     @GetMapping("/search")
     public String search(@RequestParam String q, Model model){
-        BoardDTO boardDTO = boardService.search(q);
-        List<BoardIndexDTO> boardIndexDTOList = boardIndexService.search(boardDTO.getId());
+        List<BoardDTO> boardDTO = boardService.search(q);
+        List<BoardIndexDTO> boardIndexDTOList = new ArrayList<>();
 
-        model.addAttribute("boardIndexList", boardIndexDTOList);
-        return "/boardPages/list";
+        if(boardDTO != null) {
+            for (int i = 0; i < boardDTO.size(); i++) {
+                boardIndexDTOList.add(boardIndexService.search(boardDTO.get(i).getId()));
+            }
+            System.out.println("boardIndexDTOList = " + boardIndexDTOList);
+            model.addAttribute("boardIndexList", boardIndexDTOList);
+            return "/boardPages/list";
+        }else{
+            return "redirect:/";
+        }
     }
 }

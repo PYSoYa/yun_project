@@ -9,12 +9,12 @@
                                 boardPersonnel, boardWorkperiod, boardWorkDays, boardWorktime,
                                 boardGender, boardAge, boardEducation, boardDeadline, boardContext,
                                 boardAddress, boardAddress1, boardMoney, boardManagerName, boardEmail,
-                                boardMobile)
+                                boardMobile,boardDate)
                 values (#{boardName},#{boardTitle},#{boardOccupation},#{boardDemploymentType},
                         #{boardPersonnel},#{boardWorkperiod},#{boardWorkDays},#{boardWorktime},
                         #{boardGender},#{boardAge},#{boardEducation},#{boardDeadline}, #{boardContext},
                         #{boardAddress},#{boardAddress1},#{boardMoney},#{boardManagerName},#{boardEmail},
-                        #{boardMobile})
+                        #{boardMobile},#{boardDate})
     </insert>
     <select id="detail" parameterType="String" resultType="board">
         select * from board_table where boardTitle=#{boardTitle}
@@ -25,6 +25,6 @@
     <select id="search" parameterType="String" resultType="board">
         select id from board_table where boardTitle or boardOccupation or boardDemploymentType or
                                          boardWorkperiod or boardWorkDays or boardContext
-                                                        like concat ('%', #{q}, '%') order by id desc
+                                                        like concat ('%', #{q}, '%')
     </select>
 </mapper>

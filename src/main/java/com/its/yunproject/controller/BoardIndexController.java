@@ -25,7 +25,7 @@ public class BoardIndexController {
         boolean result = boardIndexService.save(boardIndexDTO);
         if(result){
             model.addAttribute("boardIndex", boardIndexDTO);
-            return "/boardPages/save";
+            return "redirect:/";
         }else{
             return "/boardIndex/mainSave";
         }

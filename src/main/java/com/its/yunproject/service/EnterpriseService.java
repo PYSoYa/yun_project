@@ -42,4 +42,8 @@ public class EnterpriseService {
     }
 
 
+    public EnterpriseDTO enterpriseDetail(Long id) {
+        EnterpriseDTO enterpriseDTO = enterpriseRepository.enderpriseDetail(id);
+        return enterpriseDTO;
+    }
 }

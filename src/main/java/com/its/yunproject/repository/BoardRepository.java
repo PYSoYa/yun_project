@@ -24,7 +24,7 @@ public class BoardRepository {
         return sql.selectOne("Board.searchDetail", boardDTO);
     }
 
-    public BoardDTO search(String q) {
-        return sql.selectOne("Board.search", q);
+    public List<BoardDTO> search(String q) {
+        return sql.selectList("Board.search", q);
     }
 }
