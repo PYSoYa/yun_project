@@ -2,13 +2,16 @@ package com.its.yunproject.controller;
 
 import com.its.yunproject.dto.BoardDTO;
 import com.its.yunproject.dto.BoardIndexDTO;
+import com.its.yunproject.dto.CommentDTO;
 import com.its.yunproject.service.BoardIndexService;
 import com.its.yunproject.service.BoardService;
+import com.its.yunproject.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +23,8 @@ public class BoardController {
 
     @Autowired
     private BoardIndexService boardIndexService;
+    @Autowired
+    private CommentService commentService;
 
     @GetMapping("/save")
     public String saveForm(){
@@ -27,20 +32,19 @@ public class BoardController {
     }
 
     @PostMapping("/save")
-    public String save(BoardDTO boardDTO, Model model){
-       boolean result = boardService.save(boardDTO);
-       if(result){
+    public String save(BoardDTO boardDTO, Model model) throws IOException {
+       boardService.save(boardDTO);
            model.addAttribute("boardDTO", boardDTO);
            return "redirect:/board/detail?boardTitle="+ boardDTO.getBoardTitle();
-       }else{
-           return "/boardPages/save";
-       }
     }
     @GetMapping("/detail")
     public String detail(@RequestParam("boardTitle") String boardTitle,Model model){
        BoardDTO boardDTO = boardService.detail(boardTitle);
+       List<CommentDTO> commentDTOList = commentService.findAll(boardDTO.getId());
 
        if(boardDTO != null){
+           model.addAttribute("commentDTOList", commentDTOList);
+           System.out.println("commentDTOList = " + commentDTOList);
            model.addAttribute("boardDTO", boardDTO);
            return "/boardPages/detail";
        }else{

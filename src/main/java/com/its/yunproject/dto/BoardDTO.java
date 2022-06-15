@@ -3,6 +3,7 @@ package com.its.yunproject.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.sql.Timestamp;
 
@@ -179,6 +180,8 @@ public class BoardDTO {
 //    }
 
     private String boardName;
+    private String boardImg;
+    private MultipartFile boardImgFile;
     private String boardTitle;
     private String boardOccupation;
     private String boardDemploymentType;

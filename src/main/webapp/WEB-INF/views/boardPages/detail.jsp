@@ -6,9 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Title</title>
+    <script src="../../../resources/js/jquery.js"></script>
     <style>
         dl{
             display: flex;
@@ -28,7 +31,7 @@
             word-break: break-all;
         }
         .container-a{
-            width: 900px;
+            width: 980px;
             margin-left: 350px;
             border: 1px solid #ededed;
             padding: 0 0 0 0;
@@ -97,6 +100,24 @@
         .span-star{
             margin-right: 20px;
         }
+        .comment-list{
+            border-bottom: 1px solid #ededed;
+            margin-top: 40px;
+        }
+        .comment-input{
+            border-bottom: 1px solid #ededed;
+        }
+        .table-td{
+            font-weight: 700;
+        }
+        .comment-th{
+            border-bottom: 1px solid #dcdbdb;
+        }
+        .date{
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-bottom: 30px;
+        }
     </style>
 </head>
 <body>
@@ -104,14 +125,18 @@
 <jsp:include page="../header/leftHeader.jsp"></jsp:include>
     <div class="container-a">
         <div class="date">
-            <span>${boardDTO.boardDate}</span>
+            <span><fmt:formatDate pattern="yyyy-MM-dd" value="${boardDTO.boardDate}"></fmt:formatDate></span>
         </div>
         <div class="group-title" style="margin-left: 32px;">
                 <span class="main-span">${boardDTO.boardTitle}</span>
+            <div class="logo">
+                <img src="${pageContext.request.contextPath}/upload${boardDTO.boardImg}"
+                     height="50" width="50">
+            </div>
             <div class="title-span">
-            <span>${boardDTO.boardMoney}</span>
-            <span>${boardDTO.boardWorkperiod}</span>
-            <span>${boardDTO.boardWorkDays}</span>
+            <span>${boardDTO.boardMoney}/</span>
+            <span>${boardDTO.boardWorkperiod}/</span>
+            <span>${boardDTO.boardWorkDays}/</span>
             <span>${boardDTO.boardWorktime}</span>
             </div>
             </div>
@@ -207,6 +232,7 @@
     </div>
 <form action="/comment/save" method="post" name="commentForm">
 <div class="comment-container">
+    <div class="comment-input">
     <dl>
     <dt><div class="star" style="color:#222222;">
         <input type="radio" id="commentStar1" name="commentStar" value="1"><span class="span-star">☆☆☆☆★</span>
@@ -219,19 +245,89 @@
     </dl>
     <dl>
         <dt>작성자</dt>
-        <dd><input type="text" id="commentWriter" name="commentWriter" value="${sessionScope.loginMemberId}"></dd>
+        <dd><input type="text" id="commentWriter" name="commentWriter" value="${sessionScope.loginMemberId}" readonly></dd>
         <dd><button type="button" id="comment-btn" onclick="commentSave()">후기 작성</button></dd>
     </dl>
     <dl>
-        <dt>내용</dt>
+        <dt style="margin-bottom: 40px;">내용</dt>
         <dd><textarea type="text" id="commentContext" name="commentContext"></textarea></dd>
     </dl>
+    </div>
+    <div id="comment-list" class="comment-list">
+    <table>
+        <tr style="text-align: left;">
+            <th class="comment-th">댓글</th>
+        </tr>
+<c:forEach items="${commentDTOList}" var="commentDTO">
+
+        <tr>
+            <td class="table-td">${commentDTO.commentWriter}***</td>
+        </tr>
+    <tr>
+        <td>${commentDTO.commentContext}</td>
+    </tr>
+    <tr>
+
+        <td>${commentDTO.commentTime}</td>
+
+    </tr>
+<tr>
+<%--    <c:choose>--%>
+<%--    <c:when test="${sessionScope.loginMemberId == commentDTO.commentWriter}">--%>
+        <div class="comment-modify" style="display: none">
+        <form action="/comment/modify" method="post" name="commentModify">
+            <td><input type="text" id="commentContextModify" name="commentContext"></td>
+            <td><button type="button" onclick="commentModify()">수정</button></td>
+        </form>
+        </div>
+<%--    </c:when>--%>
+<%--    </c:choose>--%>
+</tr>
+</c:forEach>
+    </table>
+    </div>
 </div>
 </form>
 </body>
 <script>
+    const commentModify = () => {
+
+    }
     const commentSave = () => {
-        document.commentForm.submit();
+
+        const writer = document.getElementById("commentWriter").value;
+        const context = document.getElementById("commentContext").value;
+        const star = document.querySelector('input[name="commentStar"]:checked').value;
+        $.ajax({
+            type: 'post',
+            url: '/comment/save',
+            data: {
+                "boardId":'${boardDTO.id}',
+                "commentWriter": writer,
+                "commentContext": context,
+                "commentStar": star
+            },
+            dataType: 'json',
+            success: function(result){
+                if(result != null){
+                    let output = "<table>";
+                    output += "<tr><th>댓글</th></tr>";
+                    for(let i in result){
+                        output += "<tr>" + "<td class='table-td'>"+result[i].commentWriter+"***"+"</td>" + "</tr>";
+                        output += "<tr>" + "<td>" + result[i].commentContext + "</td>" + "</tr>";
+                        // if(result[i].commentStar%result[i].id)
+                        output += "<tr>" + "<td>" + result[i].commentStar + "</td>" + "</tr>";
+                        // output += "<td>"+moment(result[i].commentDate).format("YYYY-MM-DD HH:mm:ss")+"</td>";
+
+                    }
+                    output += "</table>";
+                    document.getElementById("comment-list").innerHTML = output;
+
+                }
+            },error: function (){
+                console.log("에러");
+            }
+        })
     }
 </script>
 </html>

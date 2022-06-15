@@ -5,12 +5,12 @@
 
 <mapper namespace="Board">
     <insert id="save" parameterType="board">
-        insert into board_table(boardName, boardTitle, boardOccupation, boardDemploymentType,
+        insert into board_table(boardName, boardImg,boardTitle, boardOccupation, boardDemploymentType,
                                 boardPersonnel, boardWorkperiod, boardWorkDays, boardWorktime,
                                 boardGender, boardAge, boardEducation, boardDeadline, boardContext,
                                 boardAddress, boardAddress1, boardMoney, boardManagerName, boardEmail,
                                 boardMobile,boardDate)
-                values (#{boardName},#{boardTitle},#{boardOccupation},#{boardDemploymentType},
+                values (#{boardName},#{boardImg},#{boardTitle},#{boardOccupation},#{boardDemploymentType},
                         #{boardPersonnel},#{boardWorkperiod},#{boardWorkDays},#{boardWorktime},
                         #{boardGender},#{boardAge},#{boardEducation},#{boardDeadline}, #{boardContext},
                         #{boardAddress},#{boardAddress1},#{boardMoney},#{boardManagerName},#{boardEmail},

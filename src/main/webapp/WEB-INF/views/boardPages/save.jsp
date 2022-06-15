@@ -30,6 +30,9 @@
                제목 <input type="text" id="boardTitle" name="boardTitle" value="${boardIndex.indexTitle}" readonly>
             </div>
             <div class="input">
+                기업 로고 <input type="file" id="boardImg" name="boardImg" value="${}"
+            </div>
+            <div class="input">
                직종 <input type="text" id="boardOccupation" name="boardOccupation" >
             </div>
             <div class="input">

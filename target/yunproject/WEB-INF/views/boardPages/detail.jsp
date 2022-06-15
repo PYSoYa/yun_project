@@ -6,9 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Title</title>
+    <script src="../../../resources/js/jquery.js"></script>
     <style>
         dl{
             display: flex;
@@ -28,10 +31,9 @@
             word-break: break-all;
         }
         .container-a{
-            width: 900px;
+            width: 980px;
             margin-left: 350px;
-            border-left: 1px solid #ededed;
-            border-right: 1px solid #ededed;
+            border: 1px solid #ededed;
             padding: 0 0 0 0;
         }
         .group-title{
@@ -61,17 +63,80 @@
             font-size: 40px;
             font-weight: 700;
         }
+        textarea{
+            width: 760px;
+        }
+        #commentWriter{
+            border: hidden;
+        }
+        .comment-container{
+            margin-top: 100px;
+            margin-left: 350px;
+            margin-bottom: 100px;
+            padding: 0 40px 0;
+            width: 900px;
+            border: 1px solid #ededed;
+
+            /*border-left: 1px solid ;*/
+            /*border-right: 1px solid ;*/
+
+        }
+        #comment-btn{
+            margin-left: 450px;
+            width: 100px;
+            border-color: white;
+            outline: 1px none;
+            border-style: none;
+            color: white;
+            background-color: #222222;
+            border-radius: 6px;
+        }
+        .star{
+            display: flex;
+            font-size: 14px;
+            width: 200px;
+            margin-left: 200px;
+        }
+        .span-star{
+            margin-right: 20px;
+        }
+        .comment-list{
+            border-bottom: 1px solid #ededed;
+            margin-top: 40px;
+        }
+        .comment-input{
+            border-bottom: 1px solid #ededed;
+        }
+        .table-td{
+            font-weight: 700;
+        }
+        .comment-th{
+            border-bottom: 1px solid #dcdbdb;
+        }
+        .date{
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-bottom: 30px;
+        }
     </style>
 </head>
 <body>
 <jsp:include page="../header/header.jsp"></jsp:include>
+<jsp:include page="../header/leftHeader.jsp"></jsp:include>
     <div class="container-a">
+        <div class="date">
+            <span><fmt:formatDate pattern="yyyy-MM-dd" value="${boardDTO.boardDate}"></fmt:formatDate></span>
+        </div>
         <div class="group-title" style="margin-left: 32px;">
                 <span class="main-span">${boardDTO.boardTitle}</span>
+            <div class="logo">
+                <img src="${pageContext.request.contextPath}/upload${boardDTO.boardImg}"
+                     height="50" width="50">
+            </div>
             <div class="title-span">
-            <span>${boardDTO.boardMoney}</span>
-            <span>${boardDTO.boardWorkperiod}</span>
-            <span>${boardDTO.boardWorkDays}</span>
+            <span>${boardDTO.boardMoney}/</span>
+            <span>${boardDTO.boardWorkperiod}/</span>
+            <span>${boardDTO.boardWorkDays}/</span>
             <span>${boardDTO.boardWorktime}</span>
             </div>
             </div>
@@ -165,5 +230,104 @@
             </dl>
         </div>
     </div>
+<form action="/comment/save" method="post" name="commentForm">
+<div class="comment-container">
+    <div class="comment-input">
+    <dl>
+    <dt><div class="star" style="color:#222222;">
+        <input type="radio" id="commentStar1" name="commentStar" value="1"><span class="span-star">☆☆☆☆★</span>
+        <input type="radio" id="commentStar2" name="commentStar" value="2"><span class="span-star">☆☆☆★★</span>
+        <input type="radio" id="commentStar3" name="commentStar" value="3"><span class="span-star">☆☆★★★</span>
+        <input type="radio" id="commentStar4" name="commentStar" value="4"><span class="span-star">☆★★★★</span>
+        <input type="radio" id="commentStar5" name="commentStar" value="5"><span class="span-star">★★★★★</span>
+    </div>
+    </dt>
+    </dl>
+    <dl>
+        <dt>작성자</dt>
+        <dd><input type="text" id="commentWriter" name="commentWriter" value="${sessionScope.loginMemberId}" readonly></dd>
+        <dd><button type="button" id="comment-btn" onclick="commentSave()">후기 작성</button></dd>
+    </dl>
+    <dl>
+        <dt style="margin-bottom: 40px;">내용</dt>
+        <dd><textarea type="text" id="commentContext" name="commentContext"></textarea></dd>
+    </dl>
+    </div>
+    <div id="comment-list" class="comment-list">
+    <table>
+        <tr style="text-align: left;">
+            <th class="comment-th">댓글</th>
+        </tr>
+<c:forEach items="${commentDTOList}" var="commentDTO">
+
+        <tr>
+            <td class="table-td">${commentDTO.commentWriter}***</td>
+        </tr>
+    <tr>
+        <td>${commentDTO.commentContext}</td>
+    </tr>
+    <tr>
+
+        <td>${commentDTO.commentTime}</td>
+
+    </tr>
+<tr>
+<%--    <c:choose>--%>
+<%--    <c:when test="${sessionScope.loginMemberId == commentDTO.commentWriter}">--%>
+        <div class="comment-modify" style="display: none">
+        <form action="/comment/modify" method="post" name="commentModify">
+            <td><input type="text" id="commentContextModify" name="commentContext"></td>
+            <td><button type="button" onclick="commentModify()">수정</button></td>
+        </form>
+        </div>
+<%--    </c:when>--%>
+<%--    </c:choose>--%>
+</tr>
+</c:forEach>
+    </table>
+    </div>
+</div>
+</form>
 </body>
+<script>
+    const commentModify = () => {
+
+    }
+    const commentSave = () => {
+
+        const writer = document.getElementById("commentWriter").value;
+        const context = document.getElementById("commentContext").value;
+        const star = document.querySelector('input[name="commentStar"]:checked').value;
+        $.ajax({
+            type: 'post',
+            url: '/comment/save',
+            data: {
+                "boardId":'${boardDTO.id}',
+                "commentWriter": writer,
+                "commentContext": context,
+                "commentStar": star
+            },
+            dataType: 'json',
+            success: function(result){
+                if(result != null){
+                    let output = "<table>";
+                    output += "<tr><th>댓글</th></tr>";
+                    for(let i in result){
+                        output += "<tr>" + "<td class='table-td'>"+result[i].commentWriter+"***"+"</td>" + "</tr>";
+                        output += "<tr>" + "<td>" + result[i].commentContext + "</td>" + "</tr>";
+                        // if(result[i].commentStar%result[i].id)
+                        output += "<tr>" + "<td>" + result[i].commentStar + "</td>" + "</tr>";
+                        // output += "<td>"+moment(result[i].commentDate).format("YYYY-MM-DD HH:mm:ss")+"</td>";
+
+                    }
+                    output += "</table>";
+                    document.getElementById("comment-list").innerHTML = output;
+
+                }
+            },error: function (){
+                console.log("에러");
+            }
+        })
+    }
+</script>
 </html>

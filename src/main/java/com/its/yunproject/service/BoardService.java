@@ -1,10 +1,14 @@
 package com.its.yunproject.service;
 
 import com.its.yunproject.dto.BoardDTO;
+import com.its.yunproject.dto.EnterpriseDTO;
 import com.its.yunproject.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -12,13 +16,17 @@ public class BoardService {
     @Autowired
     private BoardRepository boardRepository;
 
-    public boolean save(BoardDTO boardDTO) {
-        int result = boardRepository.save(boardDTO);
-        if (result > 0) {
-            return true;
-        } else {
-            return false;
+    public void save(BoardDTO boardDTO) throws IOException {
+        MultipartFile boardImgFile = boardDTO.getBoardImgFile();
+        String boardImg = boardImgFile.getOriginalFilename();
+        boardImg = System.currentTimeMillis() + "-" + boardImg;
+        String savePath = "D:\\spring_img\\" + boardImg;
+
+        if(!boardImgFile.isEmpty()){
+            boardDTO.setBoardImg(boardImg);
+            boardImgFile.transferTo(new File(savePath));
         }
+        boardRepository.save(boardDTO);
     }
 
     public BoardDTO detail(String boardTitle) {
