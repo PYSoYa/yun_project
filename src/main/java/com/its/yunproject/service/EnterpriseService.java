@@ -46,4 +46,13 @@ public class EnterpriseService {
         EnterpriseDTO enterpriseDTO = enterpriseRepository.enderpriseDetail(id);
         return enterpriseDTO;
     }
+
+    public boolean enterpriseDelete(Long id) {
+        int result = enterpriseRepository.enterpriseDelete(id);
+        if(result > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

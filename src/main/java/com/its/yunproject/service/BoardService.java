@@ -36,4 +36,6 @@ public class BoardService {
         List<BoardDTO> searchList = boardRepository.search(q);
         return searchList;
     }
+
+
 }

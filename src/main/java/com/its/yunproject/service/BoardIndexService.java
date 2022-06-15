@@ -31,4 +31,14 @@ public class BoardIndexService {
         BoardIndexDTO searchList = boardIndexRepository.search(id);
         return searchList;
     }
+
+    public List<BoardIndexDTO> findByName(String indexName) {
+        List<BoardIndexDTO> boardIndexDTOList = boardIndexRepository.findByName(indexName);
+        return boardIndexDTOList;
+    }
+
+    public BoardIndexDTO findById(Long id) {
+       BoardIndexDTO boardIndexDTO = boardIndexRepository.findById(id);
+       return boardIndexDTO;
+    }
 }

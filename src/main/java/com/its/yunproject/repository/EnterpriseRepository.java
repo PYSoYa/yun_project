@@ -26,4 +26,8 @@ public class EnterpriseRepository {
     public EnterpriseDTO enderpriseDetail(Long id) {
         return sql.selectOne("Enterprise.detail", id);
     }
+
+    public int enterpriseDelete(Long id) {
+        return sql.delete("Enterprise.delete", id);
+    }
 }

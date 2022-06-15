@@ -27,4 +27,6 @@ public class BoardRepository {
     public List<BoardDTO> search(String q) {
         return sql.selectList("Board.search", q);
     }
+
+
 }

@@ -23,4 +23,11 @@ public class BoardIndexRepository {
     public BoardIndexDTO search(Long id) {
         return sql.selectOne("BoardIndex.search", id);
     }
+
+    public List<BoardIndexDTO> findByName(String indexName) {
+        return sql.selectList("BoardIndex.findByName", indexName);
+    }
+    public BoardIndexDTO findById(Long id){
+        return sql.selectOne("BoardIndex.findById", id);
+    }
 }

@@ -109,11 +109,11 @@ public class MemberController {
     }
     @PostMapping("/delete")
     public String delete(@RequestParam("id") Long id){
-       MemberDTO memberDTO = memberService.delete(id);
-       if(memberDTO != null){
+       boolean result = memberService.delete(id);
+       if(result){
            return "redirect:/";
         }else{
-           return "redirect:/member/detail?id=" + memberDTO.getId();
+           return "redirect:/member/detail?id=" + id;
         }
     }
 }

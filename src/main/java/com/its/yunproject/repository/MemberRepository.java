@@ -29,7 +29,7 @@ public class MemberRepository {
         return sql.selectOne("Member.memberDetail", id);
     }
 
-    public MemberDTO delete(Long id) {
-        return sql.selectOne("Member.delete", id);
+    public int delete(Long id) {
+        return sql.delete("Member.delete", id);
     }
 }

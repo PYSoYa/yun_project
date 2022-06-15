@@ -1,6 +1,10 @@
 package com.its.yunproject.controller;
 
+import com.its.yunproject.dto.BoardDTO;
+import com.its.yunproject.dto.BoardIndexDTO;
 import com.its.yunproject.dto.EnterpriseDTO;
+import com.its.yunproject.service.BoardIndexService;
+import com.its.yunproject.service.BoardService;
 import com.its.yunproject.service.EnterpriseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,12 +13,20 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/enterprise")
 public class EnterpriseController {
     @Autowired
     private EnterpriseService enterpriseService;
+
+    @Autowired
+    private BoardIndexService boardIndexService;
+
+    @Autowired
+    private BoardService boardService;
 
     @GetMapping("/save")
     public String saveForm(){
@@ -62,13 +74,28 @@ public class EnterpriseController {
     }
 
     @GetMapping("/enterpriseDetail")
-    public String enterpriseDetail(@RequestParam("id") Long id, Model model){
+    public String enterpriseDetail(@RequestParam("id") Long id,
+                                    Model model){
         EnterpriseDTO enterpriseDTO = enterpriseService.enterpriseDetail(id);
+
+        List<BoardIndexDTO> boardIndexDTOList;
+        boardIndexDTOList = boardIndexService.findByName(enterpriseDTO.getEnterpriseName());
         if(enterpriseDTO != null){
+
             model.addAttribute("enterpriseDTO", enterpriseDTO);
+            model.addAttribute("boardIndexDTOList", boardIndexDTOList);
             return "/enterprisePages/enterpriseDetail";
         }else{
             return "redirect:/";
+        }
+    }
+    @PostMapping("/enterpriseDelete")
+    public String enterpriseDelete(@RequestParam("id") Long id){
+        boolean result = enterpriseService.enterpriseDelete(id);
+        if(result){
+            return "redirect:/";
+        }else{
+            return "redirect:/enterprise/enterpriseDetail?id="+ id;
         }
     }
 

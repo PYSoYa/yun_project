@@ -21,4 +21,7 @@
     <select id="detail" parameterType="Long" resultType="enterprise">
         select * from enterprise_table where id=#{id}
     </select>
+    <delete id="delete" parameterType="Long">
+        delete from enterprise_table where id=#{id}
+    </delete>
 </mapper>

@@ -21,11 +21,10 @@ public class BoardIndexController {
     }
     @PostMapping("/save")
     public String save(@ModelAttribute BoardIndexDTO boardIndexDTO, Model model){
-        System.out.println("boardIndexDTO = " + boardIndexDTO);
         boolean result = boardIndexService.save(boardIndexDTO);
         if(result){
             model.addAttribute("boardIndex", boardIndexDTO);
-            return "redirect:/";
+            return "/boardPages/save";
         }else{
             return "/boardIndex/mainSave";
         }

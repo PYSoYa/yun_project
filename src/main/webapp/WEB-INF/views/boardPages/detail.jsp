@@ -30,8 +30,7 @@
         .container-a{
             width: 900px;
             margin-left: 350px;
-            border-left: 1px solid #ededed;
-            border-right: 1px solid #ededed;
+            border: 1px solid #ededed;
             padding: 0 0 0 0;
         }
         .group-title{
@@ -61,11 +60,52 @@
             font-size: 40px;
             font-weight: 700;
         }
+        textarea{
+            width: 760px;
+        }
+        #commentWriter{
+            border: hidden;
+        }
+        .comment-container{
+            margin-top: 100px;
+            margin-left: 350px;
+            margin-bottom: 100px;
+            padding: 0 40px 0;
+            width: 900px;
+            border: 1px solid #ededed;
+
+            /*border-left: 1px solid ;*/
+            /*border-right: 1px solid ;*/
+
+        }
+        #comment-btn{
+            margin-left: 450px;
+            width: 100px;
+            border-color: white;
+            outline: 1px none;
+            border-style: none;
+            color: white;
+            background-color: #222222;
+            border-radius: 6px;
+        }
+        .star{
+            display: flex;
+            font-size: 14px;
+            width: 200px;
+            margin-left: 200px;
+        }
+        .span-star{
+            margin-right: 20px;
+        }
     </style>
 </head>
 <body>
 <jsp:include page="../header/header.jsp"></jsp:include>
+<jsp:include page="../header/leftHeader.jsp"></jsp:include>
     <div class="container-a">
+        <div class="date">
+            <span>${boardDTO.boardDate}</span>
+        </div>
         <div class="group-title" style="margin-left: 32px;">
                 <span class="main-span">${boardDTO.boardTitle}</span>
             <div class="title-span">
@@ -165,5 +205,33 @@
             </dl>
         </div>
     </div>
+<form action="/comment/save" method="post" name="commentForm">
+<div class="comment-container">
+    <dl>
+    <dt><div class="star" style="color:#222222;">
+        <input type="radio" id="commentStar1" name="commentStar" value="1"><span class="span-star">☆☆☆☆★</span>
+        <input type="radio" id="commentStar2" name="commentStar" value="2"><span class="span-star">☆☆☆★★</span>
+        <input type="radio" id="commentStar3" name="commentStar" value="3"><span class="span-star">☆☆★★★</span>
+        <input type="radio" id="commentStar4" name="commentStar" value="4"><span class="span-star">☆★★★★</span>
+        <input type="radio" id="commentStar5" name="commentStar" value="5"><span class="span-star">★★★★★</span>
+    </div>
+    </dt>
+    </dl>
+    <dl>
+        <dt>작성자</dt>
+        <dd><input type="text" id="commentWriter" name="commentWriter" value="${sessionScope.loginMemberId}"></dd>
+        <dd><button type="button" id="comment-btn" onclick="commentSave()">후기 작성</button></dd>
+    </dl>
+    <dl>
+        <dt>내용</dt>
+        <dd><textarea type="text" id="commentContext" name="commentContext"></textarea></dd>
+    </dl>
+</div>
+</form>
 </body>
+<script>
+    const commentSave = () => {
+        document.commentForm.submit();
+    }
+</script>
 </html>

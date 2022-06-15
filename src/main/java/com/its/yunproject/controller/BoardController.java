@@ -31,7 +31,6 @@ public class BoardController {
        boolean result = boardService.save(boardDTO);
        if(result){
            model.addAttribute("boardDTO", boardDTO);
-
            return "redirect:/board/detail?boardTitle="+ boardDTO.getBoardTitle();
        }else{
            return "/boardPages/save";
@@ -70,7 +69,6 @@ public class BoardController {
             for (int i = 0; i < boardDTO.size(); i++) {
                 boardIndexDTOList.add(boardIndexService.search(boardDTO.get(i).getId()));
             }
-            System.out.println("boardIndexDTOList = " + boardIndexDTOList);
             model.addAttribute("boardIndexList", boardIndexDTOList);
             return "/boardPages/list";
         }else{

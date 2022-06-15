@@ -6,12 +6,18 @@
 <mapper namespace="BoardIndex">
     <insert id="save" parameterType="boardIndex">
         insert into boardindex_table(indexName, indexTitle, indexArea1, indexArea2, indexMoney, indexDate)
-                    values (#{indexName},#{indexTitle},#{indexArea1}, #{indexArea2},#{indexMoney},#{indexDate})
+                    values (#{indexName},#{indexTitle},#{indexArea1}, #{indexArea2},#{indexMoney},now())
     </insert>
     <select id="findAll" resultType="boardIndex">
         select * from boardindex_table
     </select>
     <select id="search" parameterType="Long" resultType="boardIndex">
+        select * from boardindex_table where id=#{id}
+    </select>
+    <select id="findByName" parameterType="String" resultType="boardIndex">
+        select * from boardindex_table where indexName=#{indexName}
+    </select>
+    <select id="findById" parameterType="Long" resultType="boardIndex">
         select * from boardindex_table where id=#{id}
     </select>
 </mapper>
