@@ -14,15 +14,9 @@
     </style>
 </head>
 <body>
-    <div class="main-header">
-        <div class="carrer">
-            <a onclick="myPageCarrer()">이력서</a>
-        </div>
-    </div>
+
 </body>
 <script>
-    const myPageCarrer = () => {
-        location.href = "/member/findById?id=${sessionScope.loginId}";
-    }
+
 </script>
 </html>

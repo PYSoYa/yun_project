@@ -37,7 +37,7 @@
             padding: 0 0 0 0;
         }
         .group-title{
-            margin-bottom: 200px;
+            margin-bottom: 120px;
         }
         .group-a{
             border-top: 1px solid #ededed;
@@ -57,7 +57,10 @@
         .title-span{
             text-align: right;
             margin-right: 10px;
-            font-size: 24px;
+            font-size: 20px;
+            margin-left: 270px;
+            margin-top: 40px;
+            text-align: left;
         }
         .main-span{
             font-size: 40px;
@@ -70,12 +73,12 @@
             border: hidden;
         }
         .comment-container{
-            margin-top: 100px;
-            margin-left: 350px;
-            margin-bottom: 100px;
-            padding: 0 40px 0;
-            width: 900px;
-            border: 1px solid #ededed;
+            margin-top: 100px !important;
+            margin-left: 350px !important;
+            margin-bottom: 100px !important;
+            padding: 0 40px 0 !important;
+            width: 980px !important;
+            border: 1px solid #ededed !important;
 
             /*border-left: 1px solid ;*/
             /*border-right: 1px solid ;*/
@@ -93,8 +96,8 @@
         }
         .star{
             display: flex;
-            font-size: 14px;
             width: 200px;
+            font-size: 14px;
             margin-left: 200px;
         }
         .span-star{
@@ -109,6 +112,7 @@
         }
         .table-td{
             font-weight: 700;
+            width: 100px;
         }
         .comment-th{
             border-bottom: 1px solid #dcdbdb;
@@ -117,6 +121,19 @@
             margin-top: 20px;
             margin-left: 20px;
             margin-bottom: 30px;
+        }
+        .logo{
+            width: 310px;
+        }
+        .logo-span{
+            margin-top: 40px;
+            display: flex;
+        }
+        .title-span dl{
+            margin-bottom: 60px;
+        }
+        .table-star{
+
         }
     </style>
 </head>
@@ -129,17 +146,32 @@
         </div>
         <div class="group-title" style="margin-left: 32px;">
                 <span class="main-span">${boardDTO.boardTitle}</span>
+
+        <div class="logo-span">
             <div class="logo">
-                <img src="${pageContext.request.contextPath}/upload${boardDTO.boardImg}"
-                     height="50" width="50">
+                <img src="${pageContext.request.contextPath}/upload/${boardDTO.boardImg}"
+                     height="450" width="450">
             </div>
             <div class="title-span">
-            <span>${boardDTO.boardMoney}/</span>
-            <span>${boardDTO.boardWorkperiod}/</span>
-            <span>${boardDTO.boardWorkDays}/</span>
-            <span>${boardDTO.boardWorktime}</span>
+                <dl>
+                    <dt>급여</dt>
+                    <dd>${boardDTO.boardMoney}</dd>
+                </dl>
+                <dl>
+                    <dt>근무기간</dt>
+                    <dd>${boardDTO.boardWorkperiod}</dd>
+                </dl>
+                <dl>
+                    <dt>근무요일</dt>
+                    <dd>${boardDTO.boardWorkDays}</dd>
+                </dl>
+                <dl>
+                    <dt>근무시간</dt>
+                    <dd>${boardDTO.boardWorktime}</dd>
+                </dl>
             </div>
             </div>
+        </div>
         <div class="group-a">
             <div class="title">
             <span class="span">모집조건</span>
@@ -230,16 +262,21 @@
             </dl>
         </div>
     </div>
+
 <form action="/comment/save" method="post" name="commentForm">
 <div class="comment-container">
     <div class="comment-input">
+        <dl>
+            <dt>평균평점</dt>
+            <dd id="starDd"></dd>
+        </dl>
     <dl>
     <dt><div class="star" style="color:#222222;">
-        <input type="radio" id="commentStar1" name="commentStar" value="1"><span class="span-star">☆☆☆☆★</span>
-        <input type="radio" id="commentStar2" name="commentStar" value="2"><span class="span-star">☆☆☆★★</span>
-        <input type="radio" id="commentStar3" name="commentStar" value="3"><span class="span-star">☆☆★★★</span>
-        <input type="radio" id="commentStar4" name="commentStar" value="4"><span class="span-star">☆★★★★</span>
-        <input type="radio" id="commentStar5" name="commentStar" value="5"><span class="span-star">★★★★★</span>
+        <input type="radio" id="commentStar1" name="commentStar" value="☆☆☆☆★"><span class="span-star">☆☆☆☆★</span>
+        <input type="radio" id="commentStar2" name="commentStar" value="☆☆☆★★"><span class="span-star">☆☆☆★★</span>
+        <input type="radio" id="commentStar3" name="commentStar" value="☆☆★★★"><span class="span-star">☆☆★★★</span>
+        <input type="radio" id="commentStar4" name="commentStar" value="☆★★★★"><span class="span-star">☆★★★★</span>
+        <input type="radio" id="commentStar5" name="commentStar" value="★★★★★"><span class="span-star">★★★★★</span>
     </div>
     </dt>
     </dl>
@@ -262,6 +299,7 @@
 
         <tr>
             <td class="table-td">${commentDTO.commentWriter}***</td>
+            <td>${commentDTO.commentStar}</td>
         </tr>
     <tr>
         <td>${commentDTO.commentContext}</td>
@@ -294,6 +332,8 @@
 
     }
     const commentSave = () => {
+        var starResult1 = 0;
+        var starResult2 = "";
 
         const writer = document.getElementById("commentWriter").value;
         const context = document.getElementById("commentContext").value;
@@ -311,17 +351,51 @@
             success: function(result){
                 if(result != null){
                     let output = "<table>";
-                    output += "<tr><th>댓글</th></tr>";
+                    output += "<tr><th class='comment-th'>댓글</th></tr>";
                     for(let i in result){
-                        output += "<tr>" + "<td class='table-td'>"+result[i].commentWriter+"***"+"</td>" + "</tr>";
+                        output += "<tr>" + "<td class='table-td'>"+result[i].commentWriter+"***"+"</td>"
+                            + "<td class='table-star'>" + result[i].commentStar + "</td>" + "</tr>";
                         output += "<tr>" + "<td>" + result[i].commentContext + "</td>" + "</tr>";
-                        // if(result[i].commentStar%result[i].id)
-                        output += "<tr>" + "<td>" + result[i].commentStar + "</td>" + "</tr>";
+                        if(result[i].commentStar == "☆☆☆☆★"){
+                            starResult1 += 1;
+                        }else if(result[i].commentStar == "☆☆☆★★"){
+                            starResult1 += 2;
+                        }else if(result[i].commentStar == "☆☆★★★"){
+                            starResult1 += 3;
+                        }else if(result[i].commentStar == "☆★★★★"){
+                            starResult1 += 4;
+                        }else if(result[i].commentStar == "★★★★★"){
+                            starResult1 += 5;
+                        }else{
+                            alert("별점을 입력해주세요");
+                            break;
+                        }
                         // output += "<td>"+moment(result[i].commentDate).format("YYYY-MM-DD HH:mm:ss")+"</td>";
-
-                    }
+                        console.log(starResult1%result[i].id);
+                        starResult2 = starResult1%result[i].id;
+                        }
                     output += "</table>";
                     document.getElementById("comment-list").innerHTML = output;
+                    switch (starResult2){
+                        case 1:
+                            document.getElementById("starDd").innerHTML = "☆☆☆☆★";
+                            break;
+                        case 2:
+                            document.getElementById("starDd").innerHTML = "☆☆☆★★";
+                            break;
+                        case 3:
+                            document.getElementById("starDd").innerHTML = "☆☆★★★";
+                            break;
+                        case 4:
+                            document.getElementById("starDd").innerHTML = "☆★★★★";
+                            break;
+                        case 5:
+                            document.getElementById("starDd").innerHTML = "★★★★★";
+                            break;
+                        default:
+                            break;
+                    }
+
 
                 }
             },error: function (){

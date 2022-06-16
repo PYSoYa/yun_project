@@ -23,14 +23,17 @@
 </head>
 <body>
 <div class="container">
-    <form action="/board/save" method="post" name="context1">
+    <form action="/board/save" method="post" name="context1" enctype="multipart/form-data">
         <h2>모집내용</h2>
         <div class="input-g">
             <div class="input">
                제목 <input type="text" id="boardTitle" name="boardTitle" value="${boardIndex.indexTitle}" readonly>
             </div>
             <div class="input">
-               직종 <input type="text" id="boardOccupation" name="boardOccupation" >
+                기업 로고 <input type="file" id="boardImgFile" name="boardImgFile">
+            </div>
+            <div class="input">
+               직종 <input type="text" id="boardOccupation" name="boardOccupation">
             </div>
             <div class="input">
                고용형태 <input type="checkbox" id="boardDemploymentType" name="boardDemploymentType" value="아르바이트">아르바이트

@@ -7,6 +7,9 @@
     <insert id="save" parameterType="comment">
         insert into comment_table(boardId, commentStar, commentWriter, commentContext, commentTime)
                     values (#{boardId},#{commentStar}, #{commentWriter}, #{commentContext}, now())
+<selectKey resultType="Long" keyProperty="id" order="AFTER">
+    select last_insert_id()
+</selectKey>
     </insert>
     <select id="findAll" parameterType="Long" resultType="comment">
         select * from comment_table where boardId=#{id}

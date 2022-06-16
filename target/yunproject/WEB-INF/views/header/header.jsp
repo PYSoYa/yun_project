@@ -10,10 +10,15 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
+    <link rel="stylesheet" href="../../../resources/css/login.css">
+    <script src="../../../resources/js/header.js"></script>
     <title>Title</title>
     <style>
+        body{
+            margin: 0;
+        }
         .header-container {
-            width: 1680px;
+            width: 100%;
             margin: 10px 40px 10px 0;
             padding: 0;
             display: flex;
@@ -105,70 +110,6 @@
         </div>
     </div>
 </header>
-<div class="container-top">
-    <div class="container-top-1">
-        <span onclick="detailSearch()">상세검색</span>
-    </div>
-    <div class="container-top-2" id="detail" style="display: none;">
-        <div class="col-10">
-            <div class="p-3 border bg-body">
-                <form action="/board/searchDetail" method="get" name="searchDetail">
-                    <div class="search">
-                        <div class="search-1">
-                            <select id="boardGender" name="boardGender">
-                                <option value="">성별</option>
-                                <option value="무관">무관</option>
-                                <option value="남자">남자</option>
-                                <option value="여자">여자</option>
-                            </select>
-                        </div>
-                        <div class="search-2">
-                            <select id="boardOccupation" name="boardOccupation">
-                                <option value="">업직종별</option>
-                                <option value="서비스">서비스</option>
-                                <option value="IT.기술">IT.기술</option>
-                            </select>
-                        </div>
-                        <input type="button" onclick="search()" value="검색">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+
 </body>
-<script>
-    const home = () => {
-        location.href = "/";
-    }
-    const login = () => {
-        var ww=450;
-        var wh=400;
-
-        var top=(screen.availHeight-wh)/2;
-        var left=(screen.availWidth-ww)/2;
-
-        window.open('/homeLogin','get','width='+ww+', height='+wh+', top='+top+', left='+left+',toolbar=no, menubar=no, scrollbars=no, resizable=no' );
-    }
-    const signup = () => {
-        location.href = "/mainSave";
-    }
-    const logout = () => {
-        location.href = "/member/logout";
-    }
-    const enterpriseLogout = () => {
-        location.href = "/enterprise/logout";
-    }
-    const search = () => {
-        document.searchDetail.submit();
-    }
-    const detailSearch = () => {
-        const detail = document.getElementById("detail");
-        if(detail.style.display == "none"){
-            detail.style.display = "block";
-        }else{
-            detail.style.display = 'none';
-        }
-    }
-</script>
 </html>

@@ -16,6 +16,9 @@
         .money {
             text-align: right;
         }
+        .container{
+            margin-top: 74px;
+        }
     </style>
 </head>
 <body>
@@ -25,11 +28,11 @@
     <div class="row g-2">
         <c:forEach var="boardIndex" items="${boardIndexList}">
             <div class="col-12">
-                <a class="a-tag" id="board" href="/board/detail?boardTitle=${boardIndex.indexTitle}">
+                <a class="a-tag" id="board" href="/board/detail?id=${boardIndex.id}">
                     <div class="p-3 border bg-light" style="color: #222222">
                             ${boardIndex.indexName}<br>
                             ${boardIndex.indexTitle}<br>
-                            ${boardIndex.indexArea2}
+                            ${boardIndex.indexArea2}<br>
                                 <fmt:formatDate pattern="yyyy.MM.dd"
                                                 value="${boardIndex.indexDate}"></fmt:formatDate>
                             <div class="money">

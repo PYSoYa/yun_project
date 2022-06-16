@@ -29,8 +29,8 @@ public class BoardService {
         boardRepository.save(boardDTO);
     }
 
-    public BoardDTO detail(String boardTitle) {
-       BoardDTO boardDTO = boardRepository.detail(boardTitle);
+    public BoardDTO detail(Long id) {
+       BoardDTO boardDTO = boardRepository.detail(id);
        return boardDTO;
     }
 
@@ -40,7 +40,6 @@ public class BoardService {
     }
 
     public List<BoardDTO> search(String q) {
-        System.out.println("q = " + q);
         List<BoardDTO> searchList = boardRepository.search(q);
         return searchList;
     }

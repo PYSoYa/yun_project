@@ -1,6 +1,7 @@
 package com.its.yunproject.controller;
 
 import com.its.yunproject.dto.BoardIndexDTO;
+import com.its.yunproject.dto.EnterpriseDTO;
 import com.its.yunproject.service.BoardIndexService;
 import com.its.yunproject.service.EnterpriseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,9 @@ public class BoardIndexController {
     @PostMapping("/save")
     public String save(@ModelAttribute BoardIndexDTO boardIndexDTO, Model model){
         boolean result = boardIndexService.save(boardIndexDTO);
-
+       EnterpriseDTO enterpriseDTO = enterpriseService.enterpriseDetail(boardIndexDTO.getId());
         if(result){
+            model.addAttribute("enterpriseDTO", enterpriseDTO);
             model.addAttribute("boardIndex", boardIndexDTO);
             return "/boardPages/save";
         }else{

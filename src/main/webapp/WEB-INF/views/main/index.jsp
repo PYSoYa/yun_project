@@ -33,11 +33,7 @@
             text-align: right;
             margin-right: 20px;
         }
-        .container-top-2{
-            margin-left: 80px;
-            margin-right: 20px;
-            width: 1125px;
-        }
+
         .search{
             display: flex;
         }
@@ -56,13 +52,43 @@
 <body>
 <jsp:include page="../header/header.jsp"></jsp:include>
 <jsp:include page="../header/leftHeader.jsp"></jsp:include>
-
+<div class="container-top">
+    <div class="container-top-1">
+        <span onclick="detailSearch()">상세검색</span>
+    </div>
+    <div class="container-top-2" id="detail" style="display: none;">
+        <div class="col-12">
+            <div class="p-3 border bg-body m-lg-4">
+                <form action="/board/searchDetail" method="get" name="searchDetail">
+                    <div class="search">
+                        <div class="search-1">
+                            <select id="boardGender" name="boardGender">
+                                <option value="">성별</option>
+                                <option value="무관">무관</option>
+                                <option value="남자">남자</option>
+                                <option value="여자">여자</option>
+                            </select>
+                        </div>
+                        <div class="search-2">
+                            <select id="boardOccupation" name="boardOccupation">
+                                <option value="">업직종별</option>
+                                <option value="서비스">서비스</option>
+                                <option value="IT.기술">IT.기술</option>
+                            </select>
+                        </div>
+                        <input type="button" onclick="search()" value="검색">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
     <div class="container">
         <div class="row g-2">
             <c:forEach var="boardIndex" items="${boardIndexList}">
             <div class="col-3">
-                <a class="a-tag" id="board" href="/board/detail?boardTitle=${boardIndex.indexTitle}">
+                <a class="a-tag" id="board" href="/board/detail?id=${boardIndex.id}">
                 <div class="p-3 border bg-light" style="">
                         ${boardIndex.indexName}<br>
                         ${boardIndex.indexTitle}<br>

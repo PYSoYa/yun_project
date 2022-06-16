@@ -11,11 +11,69 @@
     <title>Title</title>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="../../../resources/js/jquery.js"></script>
+    <style>
+        .main{
+            border:1px solid white;
+            border-inline-style: hidden;
+            height:330px;
+            width: 400px;
+            position: absolute;
+            top: 40% !important;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -200px;
+        }
+        .title-span{
+            font-weight: 600;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        #button1 {
+             font-family: 'Noto Sans KR', sans-serif;
+             margin-left: 1px;
+             height: 40px;
+             width: 100%;
+             background-color: #222222;
+             display: inline-block;
+             font-family: 'Noto Sans KR', sans-serif;
+             border-color: #222222;
+             border-radius: 4px;
+             color: white;
+             margin-bottom: 40px;
+         }
+        input[type='text'] {
+            box-sizing: border-box;
+            border: 1px solid #bad4ff;
+            border-radius: 4px;
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px !important;
+        }
+        #sample2_postcode{
+            width: 280px;
+        }
+        #areaBtn{
+            font-family: 'Noto Sans KR', sans-serif;
+            margin-left: 1px;
+            height: 40px;
+            width: 100px;
+            background-color: #222222;
+            display: inline-block;
+            font-family: 'Noto Sans KR', sans-serif;
+            border-color: #222222;
+            border-radius: 4px;
+            color: white;
+            margin-left: 12px;
+        }
+    </style>
 </head>
 <body>
 <form action="/boardIndex/save" method="post">
     <div class="main">
-        <div class="boardStyle">
+        <div class="title-span">
+        요약글 작성
+        </div>
+            <div class="boardStyle">
             <input type="text" id="indexName" name="indexName" value="${sessionScope.enterpriseName}" placeholder="기업명" readonly>
         </div>
         <div class="boardStyle">
@@ -24,14 +82,15 @@
         <div class="boardStyle">
             <input type="text" id="indexMoney" name="indexMoney" placeholder="급여">
         </div>
-    </div>
+
     <input type="text" id="sample2_postcode" name="indexArea1" placeholder="우편번호">
-    <input type="button" onclick="sample2_execDaumPostcode()" value="우편번호 찾기"><br>
+    <input type="button" id="areaBtn" onclick="sample2_execDaumPostcode()" value="우편번호 찾기"><br>
     <input type="text" id="sample2_address" name="indexArea2" placeholder="주소"><br>
     <div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
         <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
     </div>
-        <input type="submit" value="상세정보 작성">
+        <input id="button1" type="submit" value="상세정보 작성">
+    </div>
 </form>
 </body>
 <script>

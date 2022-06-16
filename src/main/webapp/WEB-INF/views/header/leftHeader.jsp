@@ -11,7 +11,6 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="../../../resources/css/my.css">
-
     <script src="../../../resources/js/jquery.js"></script>
     <script src="../../../resources/js/myPage.js"></script>
     <style>
@@ -67,10 +66,10 @@
                 <ul class="big_menu">
                     <li>기업회원</li>
                     <ul class="small_menu">
+                        <li><a onclick="enterpriseDetail()">내 정보</a></li>
                         <li>
                             <a onclick="boardIndexSave()">공고등록</a>
                         </li>
-                        <li><a href="/enterprise/enterpriseDetail?id=${sessionScope.enterpriseLoginId}">내 정보</a></li>
                     </ul>
                 </ul>
                 <ul class="big_menu">
@@ -91,6 +90,14 @@
 <script>
     const menuSearch = () => {
         document.searchForm.submit();
+    }
+    const enterpriseDetail = () => {
+        if(${sessionScope.loginEnterpriseId != null}){
+            location.href = "/enterprise/enterpriseDetail?id=${sessionScope.enterpriseLoginId}";
+        }else{
+            alert("기업회원만 이용가능합니다.");
+        }
+
     }
     const myPage = () => {
         if(${sessionScope.loginEnterpriseId != null}){

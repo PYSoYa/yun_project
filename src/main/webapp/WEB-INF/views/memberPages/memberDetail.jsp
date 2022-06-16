@@ -45,13 +45,22 @@
         #memberDelete{
             margin-left: 20px;
         }
+        .main-carrer{
+            margin-left: 100px;
+            margin-bottom: 50px;
+        }
     </style>
 </head>
 <body>
 <jsp:include page="../header/header.jsp"></jsp:include>
 <jsp:include page="../header/leftHeader.jsp"></jsp:include>
-
+<div class="main-carrer">
+    <div class="carrer">
+        <a onclick="myPageCarrer()">이력서</a>
+    </div>
+</div>
 <div class="member-container">
+
     <div class="group-a">
     <dl>
         <dt>아이디</dt>
@@ -131,6 +140,9 @@
 </div>
 </body>
 <script>
+    const myPageCarrer = () => {
+        location.href = "/member/findById?id=${sessionScope.loginId}";
+    }
     const memberDelete = () => {
         const passCheck = document.getElementById("pass");
         passCheck.style.display = 'block';
@@ -141,13 +153,14 @@
     }
     const passCheck = () => {
         const pass = document.getElementById("memberPassword").value;
+        console.log(pass);
         const passCheck = document.getElementById("pass");
         const group = document.getElementById("group-b");
         const modify = document.getElementById("modify");
         const memberDelete = document.getElementById("memberDelete");
         const ps = '${sessionScope.loginMemberPassword}';
 
-        if(ps == pass){
+        if(ps === pass){
             alert("비밀번호가 일치합니다.");
                 if(group.style.display == 'none'){
                     group.style.display = 'block';

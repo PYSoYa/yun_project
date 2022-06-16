@@ -16,8 +16,8 @@ public class BoardRepository {
         return sql.insert("Board.save", boardDTO);
     }
 
-    public BoardDTO detail(String boardTitle) {
-        return sql.selectOne("Board.detail", boardTitle);
+    public BoardDTO detail(Long id) {
+        return sql.selectOne("Board.detail", id);
     }
 
     public BoardDTO searchDetail(BoardDTO boardDTO) {

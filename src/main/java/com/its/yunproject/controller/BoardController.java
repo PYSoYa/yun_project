@@ -32,19 +32,17 @@ public class BoardController {
     }
 
     @PostMapping("/save")
-    public String save(BoardDTO boardDTO, Model model) throws IOException {
-       boardService.save(boardDTO);
+    public String save(@ModelAttribute BoardDTO boardDTO, Model model) throws IOException {
+            boardService.save(boardDTO);
            model.addAttribute("boardDTO", boardDTO);
-           return "redirect:/board/detail?boardTitle="+ boardDTO.getBoardTitle();
+           return "redirect:/board/detail?id="+ boardDTO.getId();
     }
     @GetMapping("/detail")
-    public String detail(@RequestParam("boardTitle") String boardTitle,Model model){
-       BoardDTO boardDTO = boardService.detail(boardTitle);
+    public String detail(@RequestParam("id") Long id, Model model){
+       BoardDTO boardDTO = boardService.detail(id);
        List<CommentDTO> commentDTOList = commentService.findAll(boardDTO.getId());
-
        if(boardDTO != null){
            model.addAttribute("commentDTOList", commentDTOList);
-           System.out.println("commentDTOList = " + commentDTOList);
            model.addAttribute("boardDTO", boardDTO);
            return "/boardPages/detail";
        }else{
@@ -65,8 +63,10 @@ public class BoardController {
     }
 
     @GetMapping("/search")
-    public String search(@RequestParam String q, Model model){
+    public String search(@RequestParam("q") String q, Model model){
+        System.out.println("q = " + q);
         List<BoardDTO> boardDTO = boardService.search(q);
+        System.out.println("boardDTO = " + boardDTO);
         List<BoardIndexDTO> boardIndexDTOList = new ArrayList<>();
 
         if(boardDTO != null) {

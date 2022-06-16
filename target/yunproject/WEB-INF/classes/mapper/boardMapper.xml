@@ -5,7 +5,7 @@
 
 <mapper namespace="Board">
     <insert id="save" parameterType="board">
-        insert into board_table(boardName, boardImg,boardTitle, boardOccupation, boardDemploymentType,
+        insert into board_table(boardName, boardImg, boardTitle, boardOccupation, boardDemploymentType,
                                 boardPersonnel, boardWorkperiod, boardWorkDays, boardWorktime,
                                 boardGender, boardAge, boardEducation, boardDeadline, boardContext,
                                 boardAddress, boardAddress1, boardMoney, boardManagerName, boardEmail,
@@ -15,17 +15,18 @@
                         #{boardGender},#{boardAge},#{boardEducation},#{boardDeadline}, #{boardContext},
                         #{boardAddress},#{boardAddress1},#{boardMoney},#{boardManagerName},#{boardEmail},
                         #{boardMobile},now())
+    <selectKey resultType="Long" keyProperty="id" order="AFTER">
+        select last_insert_id()
+    </selectKey>
     </insert>
-    <select id="detail" parameterType="String" resultType="board">
-        select * from board_table where boardTitle=#{boardTitle}
+    <select id="detail" parameterType="Long" resultType="board">
+        select * from board_table where id=#{id}
     </select>
     <select id="searchDetail" parameterType="board" resultType="board">
         select * from board_table where boardGender=#{boardGender} and boardOccupation=#{boardOccupation}
     </select>
     <select id="search" parameterType="String" resultType="board">
-        select * from board_table where boardTitle or boardOccupation or boardDemploymentType or
-                                         boardWorkperiod or boardWorkDays or boardContext
-                                                        like concat ('%', #{q}, '%')
+        select * from board_table where boardTitle like concat('%', #{q}, '%') order by id desc
     </select>
     <select id="findByName" parameterType="String" resultType="board">
         select * from board_table where boardName=#{boardName}

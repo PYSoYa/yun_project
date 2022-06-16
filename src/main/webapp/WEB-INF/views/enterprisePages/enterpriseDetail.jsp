@@ -41,8 +41,12 @@
             color: #222;
             word-break: break-all;
         }
+        .group-a{
+            margin-top: 50px;
+        }
         .group-b{
             margin-left: 200px;
+            margin-top: 50px;
         }
         .passCheck{
             margin-left: 100px;
@@ -91,7 +95,7 @@
     <form action="/member/update" method="post" name="update">
         <dl>
             <dt>아이디</dt>
-            <dd>${memberDTO.memberId}</dd>
+            <dd>${enterpriseDTO.enterpriseId}</dd>
         </dl>
 
         <dl>

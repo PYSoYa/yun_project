@@ -64,6 +64,14 @@ input[type="text"] {
     height: 40px;
     margin-bottom: 20px;
 }
+#enterprisePassword{
+    box-sizing: border-box;
+    border: 1px solid #bad4ff;
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+}
 #memberSecurity{
     box-sizing: border-box;
     border: 1px solid #bad4ff;

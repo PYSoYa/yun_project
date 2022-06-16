@@ -15,14 +15,14 @@ public class EnterpriseService {
     private EnterpriseRepository enterpriseRepository;
 
     public void save(EnterpriseDTO enterpriseDTO) throws IOException {
-        MultipartFile enterpriseProfile1 = enterpriseDTO.getEnterpriseProfile();
-        String enterpriseProfile = enterpriseProfile1.getOriginalFilename();
-        enterpriseProfile = System.currentTimeMillis() + "-" + enterpriseProfile;
-        String savePath = "D:\\spring_img\\" + enterpriseProfile;
+        MultipartFile enterpriseProfile = enterpriseDTO.getEnterpriseProfile();
+        String enterpriseProfileName = enterpriseProfile.getOriginalFilename();
+        enterpriseProfileName = System.currentTimeMillis() + "-" + enterpriseProfileName;
+        String savePath = "D:\\spring_img\\" + enterpriseProfileName;
 
-        if(!enterpriseProfile1.isEmpty()){
-            enterpriseDTO.setEnterpriseProfile(enterpriseProfile1);
-            enterpriseProfile1.transferTo(new File(savePath));
+        if(!enterpriseProfile.isEmpty()){
+            enterpriseDTO.setEnterpriseProfileName(enterpriseProfileName);
+            enterpriseProfile.transferTo(new File(savePath));
         }
         enterpriseRepository.save(enterpriseDTO);
     }
