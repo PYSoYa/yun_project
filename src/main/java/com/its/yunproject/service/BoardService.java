@@ -45,4 +45,12 @@ public class BoardService {
     }
 
 
+    public boolean delete(Long id) {
+        int result = boardRepository.delete(id);
+        if(result > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

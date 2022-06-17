@@ -41,4 +41,13 @@ public class BoardIndexService {
        BoardIndexDTO boardIndexDTO = boardIndexRepository.findById(id);
        return boardIndexDTO;
     }
+
+    public boolean delete(Long id) {
+        int result = boardIndexRepository.delete(id);
+        if(result > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

@@ -5,6 +5,8 @@ import com.its.yunproject.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Member;
+
 @Service
 public class MemberService {
     @Autowired
@@ -49,5 +51,14 @@ public class MemberService {
        }else{
            return false;
        }
+    }
+
+    public boolean update(MemberDTO memberDTO) {
+       int result = memberRepository.update(memberDTO);
+        if(result > 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

@@ -24,6 +24,9 @@
     <delete id="delete" parameterType="Long">
         delete from member_table where id=#{id}
     </delete>
+    <update id="update" parameterType="board">
+        update member_table set memberPassword=#{memberPassword} and memberEmail=#{memberEmail} where id=#{id}
+    </update>
 </mapper>
 
 

@@ -32,4 +32,19 @@ public class CommentController {
        }
 
     }
+    @GetMapping("/findById")
+    public String findByWriter(@RequestParam("commentWriter") String commentWriter, Model model){
+       List<CommentDTO> commentDTOList = commentService.findByWriter(commentWriter);
+       model.addAttribute("commentDTOList", commentDTOList);
+       return "redirect:/memberPages/memberDetail";
+    }
+    @GetMapping("/delete")
+    public String delete(@RequestParam("id") Long id, @RequestParam("loginId") Long loginId){
+       boolean result = commentService.delete(id);
+        if(result){
+            return "redirect:/member/memberDetail?id="+loginId;
+        }else{
+            return "redirect:/";
+        }
+    }
 }

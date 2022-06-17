@@ -29,4 +29,7 @@ public class BoardRepository {
     }
 
 
+    public int delete(Long id) {
+        return sql.delete("Board.delete", id);
+    }
 }

@@ -31,4 +31,7 @@
     <select id="findByName" parameterType="String" resultType="board">
         select * from board_table where boardName=#{boardName}
     </select>
+    <delete id="delete" parameterType="Long">
+        delete from board_table where id=#{id}
+    </delete>
 </mapper>

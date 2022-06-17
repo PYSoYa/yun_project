@@ -30,4 +30,8 @@ public class BoardIndexRepository {
     public BoardIndexDTO findById(Long id){
         return sql.selectOne("BoardIndex.findById", id);
     }
+
+    public int delete(Long id) {
+        return sql.delete("BoardIndex.delete", id);
+    }
 }

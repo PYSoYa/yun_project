@@ -20,4 +20,12 @@ public class CommentRepository {
         System.out.println("id = " + id);
         return sql.selectList("Comment.findAll", id);
     }
+
+    public List<CommentDTO> findByWriter(String commentWriter) {
+        return sql.selectList("Comment.findByWriter", commentWriter);
+    }
+
+    public int delete(Long id) {
+        return sql.delete("Comment.delete", id);
+    }
 }

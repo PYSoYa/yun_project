@@ -30,4 +30,8 @@ public class EnterpriseRepository {
     public int enterpriseDelete(Long id) {
         return sql.delete("Enterprise.delete", id);
     }
+
+    public int update(EnterpriseDTO enterpriseDTO) {
+        return sql.update("Enterprise.update", enterpriseDTO);
+    }
 }

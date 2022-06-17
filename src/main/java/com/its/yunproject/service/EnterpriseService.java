@@ -55,4 +55,13 @@ public class EnterpriseService {
             return false;
         }
     }
+
+    public boolean update(EnterpriseDTO enterpriseDTO) {
+        int result = enterpriseRepository.update(enterpriseDTO);
+        if(result > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

@@ -98,5 +98,15 @@ public class EnterpriseController {
             return "redirect:/enterprise/enterpriseDetail?id="+ id;
         }
     }
-
+    @PostMapping("/update")
+    public String update(@ModelAttribute EnterpriseDTO enterpriseDTO){
+        boolean result = enterpriseService.update(enterpriseDTO);
+        System.out.println("enterpriseDTO = " + enterpriseDTO);
+        System.out.println("result = " + result);
+        if(result){
+            return "redirect:/enterprise/enterpriseDetail?id=" + enterpriseDTO.getId();
+        }else{
+            return "redirect:/";
+        }
+    }
 }

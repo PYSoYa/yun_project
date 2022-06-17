@@ -89,10 +89,10 @@
             <dd>${enterpriseDTO.enterpriseAddress3}</dd>
         </dl>
         <dd><button id="modify" type="button" onclick="modify()">수정</button></dd>
-        <dd><button id="enterpriseDelete" type="button" onclick="memberDelete()">삭제</button></dd>
+        <dd><button id="enterpriseDelete" type="button" onclick="enterpriseDelete()">삭제</button></dd>
     </div>
 <div id="group-b" class="group-b" style="display: none">
-    <form action="/member/update" method="post" name="update">
+    <form action="/enterprise/update?id=${sessionScope.enterpriseLoginId}" method="post" name="enterpriseUpdate">
         <dl>
             <dt>아이디</dt>
             <dd>${enterpriseDTO.enterpriseId}</dd>
@@ -100,7 +100,7 @@
 
         <dl>
             <dt>비밀번호</dt>
-            <dd><input type="password"  name="memberPassword"></dd>
+            <dd><input type="password"  name="enterprisePassword"></dd>
         </dl>
         <dl>
             <dt>기업병</dt>
@@ -108,7 +108,7 @@
         </dl>
         <dl>
             <dt>이메일</dt>
-            <dd><input type="text" name="memberEmail"></dd>
+            <dd><input type="text" name="enterpriseEmail"></dd>
         </dl>
         <dl>
             <dt>전화번호</dt>
@@ -120,8 +120,8 @@
             <dd>${enterpriseDTO.enterpriseAddress2}</dd>
             <dd>${enterpriseDTO.enterpriseAddress3}</dd>
         </dl>
+        <button type="button" id="btn" onclick="enterpriseModify()">수정완료</button>
     </form>
-    <button type="button" id="btn" onclick="modifyBtn()">수정완료</button>
 </div>
 </div>
 <div id="pass" class="passCheck" style="display: none">
@@ -141,6 +141,7 @@
             <div class="board-container">
                 <div class="row g-2">
                     <c:forEach var="boardIndex" items="${boardIndexDTOList}">
+                        <button style="width: 50px;" onclick="boardDelete(${boardIndex.id})">삭제</button>
                         <div class="col-12">
                             <a class="a-tag" id="board" href="/board/detail?boardTitle=${boardIndex.indexTitle}">
                                 <div class="p-3 border bg-light" style="color: #222222">
@@ -163,7 +164,19 @@
 </div>
 </body>
 <script>
-    const memberDelete = () => {
+    const boardDelete = (id) => {
+        const loginId = '${sessionScope.enterpriseLoginId}';
+        location.href = "/board/delete?loginId=" + loginId + "&id="+ id;
+    }
+    const enterpriseModify = () => {
+        const modify = document.getElementById("modify");
+
+        document.enterpriseUpdate.submit();
+        setTimeout(function(){
+            modify.style.display = 'none';
+        },200);
+    }
+    const enterpriseDelete = () => {
         const passCheck = document.getElementById("pass");
         passCheck.style.display = 'block';
     }
@@ -177,7 +190,7 @@
         const group = document.getElementById("group-b");
         const modify = document.getElementById("modify");
         const memberDelete = document.getElementById("enterpriseDelete");
-        const ps = '${sessionScope.loginEnterprisePassword}';
+        const ps = '${enterpriseDTO.enterprisePassword}';
 
         if(ps == pass){
             alert("비밀번호가 일치합니다.");

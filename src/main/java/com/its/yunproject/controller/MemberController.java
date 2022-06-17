@@ -2,8 +2,10 @@ package com.its.yunproject.controller;
 
 
 import com.its.yunproject.dto.CarrerDTO;
+import com.its.yunproject.dto.CommentDTO;
 import com.its.yunproject.dto.MemberDTO;
 import com.its.yunproject.service.CarrerService;
+import com.its.yunproject.service.CommentService;
 import com.its.yunproject.service.MemberService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 
 @Controller
@@ -22,6 +25,9 @@ public class MemberController {
 
     @Autowired
     private CarrerService carrerService;
+
+    @Autowired
+    private CommentService commentService;
 
     @GetMapping("/save")
     public String saveForm(){
@@ -71,7 +77,7 @@ public class MemberController {
         return "memberDetail";
     }
     @GetMapping("/findById")
-    public String findBYIdd(@RequestParam("id") Long id, Model model){
+    public String findBYId(@RequestParam("id") Long id, Model model){
        MemberDTO memberDTO = memberService.findById(id);
        CarrerDTO carrerDTO = carrerService.findById(id);
        if(memberDTO != null){
@@ -100,7 +106,9 @@ public class MemberController {
     @GetMapping("/memberDetail")
     public String memberDetail(@RequestParam("id") Long id, Model model){
        MemberDTO memberDTO = memberService.findById(id);
+       List<CommentDTO> commentDTOList = commentService.findByWriter(memberDTO.getMemberId());
        if(memberDTO != null){
+           model.addAttribute("commentDTOList", commentDTOList);
            model.addAttribute("memberDTO", memberDTO);
            return "/memberPages/memberDetail";
        }else{
@@ -114,6 +122,18 @@ public class MemberController {
            return "redirect:/";
         }else{
            return "redirect:/member/detail?id=" + id;
+        }
+    }
+    @PostMapping("/update")
+    public String update(@ModelAttribute MemberDTO memberDTO){
+
+       boolean result = memberService.update(memberDTO);
+        System.out.println("memberDTO = " + memberDTO);
+        System.out.println("result = " + result);
+        if(result){
+            return "redirect:/member/memberDetail?id="+ memberDTO.getId();
+        }else{
+            return "redirect:/";
         }
     }
 }

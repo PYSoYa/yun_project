@@ -24,4 +24,7 @@
     <delete id="delete" parameterType="Long">
         delete from enterprise_table where id=#{id}
     </delete>
+    <update id="update" parameterType="enterprise">
+        update enterprise_table set enterprisePassword=#{enterprisePassword}, enterpriseEmail=#{enterpriseEmail} where id=#{id}
+    </update>
 </mapper>

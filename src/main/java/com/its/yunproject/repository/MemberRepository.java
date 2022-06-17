@@ -5,6 +5,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.lang.reflect.Member;
+
 @Repository
 public class MemberRepository {
     @Autowired
@@ -31,5 +33,9 @@ public class MemberRepository {
 
     public int delete(Long id) {
         return sql.delete("Member.delete", id);
+    }
+
+    public int update(MemberDTO memberDTO) {
+        return sql.update("Member.update", memberDTO);
     }
 }

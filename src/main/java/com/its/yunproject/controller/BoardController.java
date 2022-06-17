@@ -40,6 +40,7 @@ public class BoardController {
     @GetMapping("/detail")
     public String detail(@RequestParam("id") Long id, Model model){
        BoardDTO boardDTO = boardService.detail(id);
+
        List<CommentDTO> commentDTOList = commentService.findAll(boardDTO.getId());
        if(boardDTO != null){
            model.addAttribute("commentDTOList", commentDTOList);
@@ -75,6 +76,16 @@ public class BoardController {
             }
             model.addAttribute("boardIndexList", boardIndexDTOList);
             return "/boardPages/list";
+        }else{
+            return "redirect:/";
+        }
+    }
+    @GetMapping("/delete")
+    public String delete(@RequestParam("loginId") Long loginId, @RequestParam("id") Long id){
+        boolean result = boardService.delete(id);
+       boolean result1 = boardIndexService.delete(id);
+        if(result && result1){
+            return "redirect:/enterprise/enterpriseDetail?id=" + loginId;
         }else{
             return "redirect:/";
         }

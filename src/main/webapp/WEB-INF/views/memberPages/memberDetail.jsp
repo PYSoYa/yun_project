@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: user
@@ -6,6 +7,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <title>Title</title>
@@ -48,6 +51,10 @@
         .main-carrer{
             margin-left: 100px;
             margin-bottom: 50px;
+        }
+        .comment-container{
+            margin-left: 100px;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -92,7 +99,7 @@
         <dd><button id="memberDelete" type="button" onclick="memberDelete()">삭제</button></dd>
     </div>
     <div id="group-b" class="group-b" style="display: none">
-    <form action="/member/update" method="post" name="update">
+    <form action="/member/update?id=${sessionScope.loginId}" method="post" name="update">
     <dl>
         <dt>아이디</dt>
         <dd>${memberDTO.memberId}</dd>
@@ -124,8 +131,9 @@
     <dd>${memberDTO.memberAddress2}</dd>
     <dd>${memberDTO.memberAddress3}</dd>
 </dl>
+        <button type="button" id="btn" onclick="modifyBtn()">수정완료</button>
     </form>
-    <button type="button" id="btn" onclick="modifyBtn()">수정완료</button>
+
 </div>
     </div>
 
@@ -138,8 +146,38 @@
         <dd><button type="button" onclick="passCheck1()">삭제</button></dd>
     </dl>
 </div>
+<div class="comment-container">
+<table>
+    <tr style="text-align: left;">
+        <th class="comment-th">댓글</th>
+    </tr>
+
+<c:forEach items="${commentDTOList}" var="commentDTO">
+    <tr>
+
+        <td class="table-td">${commentDTO.commentWriter}***</td>
+        <td>${commentDTO.commentStar}</td>
+
+    </tr>
+    <tr>
+
+        <td><a href="/board/detail?id=${commentDTO.boardId}">${commentDTO.commentContext}</a></td>
+        <td><button type="button" onclick="commentDelete(${commentDTO.id})">삭제</button></td>
+
+    </tr>
+    <tr>
+        <td>${commentDTO.commentTime}</td>
+    </tr>
+
+    </c:forEach>
+</table>
+</div>
 </body>
 <script>
+    const commentDelete = (id) => {
+        const loginId = '${sessionScope.loginId}';
+        location.href = "/comment/delete?loginId=" + loginId + "&id="+ id;
+    }
     const myPageCarrer = () => {
         location.href = "/member/findById?id=${sessionScope.loginId}";
     }
@@ -158,7 +196,7 @@
         const group = document.getElementById("group-b");
         const modify = document.getElementById("modify");
         const memberDelete = document.getElementById("memberDelete");
-        const ps = '${sessionScope.loginMemberPassword}';
+        const ps = '${memberDTO.memberPassword}';
 
         if(ps === pass){
             alert("비밀번호가 일치합니다.");
